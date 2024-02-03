@@ -2,8 +2,8 @@
 int _printf(const char *format, ...)
 {       
 	char *j;
-	char k, l = '%';
-        int m = 0;
+	char l = '%';
+        int k, m = 0;
 	va_list i;
 	va_start(i, format);
 	while (*format)
