@@ -3,7 +3,7 @@ int _printf(const char *format, ...)
 {       
 	char *j;
 	char l = '%';
-        int k, m = 0;
+        int k, m = 0, n = 0;
 	va_list i;
 	if (format == NULL)
 		return (-1);
@@ -35,6 +35,7 @@ int _printf(const char *format, ...)
 					break;
 				default:
 					write(1, (format), 1);
+					n = 1
 					format += 1;
 					break;
 			}
@@ -43,17 +44,13 @@ int _printf(const char *format, ...)
 			return (-1);
 		else
 		{
-			if (*(format - 1) == '%')
-				return (-1);
-			else
-			{
-				write(1, format, 1);
-				m++;
-				format++;
-		
-			}
+			write(1, format, 1);
+			m++;
+			format++;
 		}
 	}
 	va_end(i);
+	if (n == 1)
+		return (0);
 	return (m);
 }
