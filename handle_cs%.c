@@ -17,24 +17,23 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%' && *(format + 1) != '\0')
 		{
-			switch (*(format + 1))
+			if (*(format + 1) == 'c')
 			{
-			case 'c':
 				k = va_arg(i, int);
-				write(1, &k, 1);
-				break;
-			case 's':
+                                write(1, &k, 1);
+			}
+			else if (*(format + 1) == 's')
+			{
 				j = va_arg(i, char *);
-				j = (j == NULL) ? "(null)" : j;
-				write(1, j, strlen(j));
-				break;
-			case '%':
+                                j = (j == NULL) ? "(null)" : j;
+                                write(1, j, strlen(j));
+			}
+			else if (*(format + 1) == '%')
 				write(1, &l, 1);
-				break;
-			default:
+			else
+			{
 				n = 1;
-				write(1, format, 1);
-				break;
+                                write(1, format, 1);
 			}
 			m = (*(format + 1) != 's') ? m + 1 : m + (int)strlen(j);
 			format = (n == 1) ? format + 1 : format + 2;
