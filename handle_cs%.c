@@ -1,4 +1,4 @@
-#include "header.h"
+#include "main.h"
 int _printf(const char *format, ...)
 {       
 	char *j;
