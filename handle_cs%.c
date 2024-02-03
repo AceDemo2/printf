@@ -9,7 +9,7 @@ int _printf(const char *format, ...)
 	char l = '%', *j;
 	int m = 0, k, n = 0;
 	va_list i;
-	
+
 	if (format == NULL || (*format == '%' && *(format + 1) == '\0'))
 		return (-1);
 	va_start(i, format);
@@ -36,15 +36,14 @@ int _printf(const char *format, ...)
 				write(1, format, 1);
 				break;
 			}
-			m = (*(format + 1) != 's') ? m + 1 : m + (int)strlen(j);
 			format = (n == 1) ? format + 1 : format + 2;
 		}
 		else
 		{
 			write(1, format, 1);
-			m++;
 			format++;
 		}
+		m = (*(format + 1) != 's') ? m + 1 : m + (int)strlen(j);
 	}
 	va_end(i);
 	return (m);
