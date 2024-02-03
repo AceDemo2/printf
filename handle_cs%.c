@@ -45,9 +45,12 @@ int _printf(const char *format, ...)
 				break;
 			}
 		}
-		write(1, format, 1);
-		m++;
-		format++;
+		else
+		{
+			write(1, format, 1);
+			m++;
+			format++;
+		}
 	}
 	va_end(i);
 	return (m);
