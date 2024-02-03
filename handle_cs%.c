@@ -23,17 +23,20 @@ int _printf(const char *format, ...)
 					m += strlen(j);
 					break;
 				case '%':
-					write(1, l, 1);
+					write(1, &l, 1);
 					m++;
 					break;
 				default:
 					break;
 			}
+			format += 2;
 		}
 		else
+		{
 			write(1, format, 1);
 			m++;
-		format++;
+			format++;
+		}
 	}
 	va_end(i);
 	return (m);
