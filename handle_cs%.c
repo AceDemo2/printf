@@ -21,6 +21,8 @@ int _printf(const char *format, ...)
 					break;
 				case 's':
 					j = va_arg(i, char *);
+					if (j == NULL)
+						j = "(nill";
 					write(1, j, strlen(j));
 					m += strlen(j);
 					break;
