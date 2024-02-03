@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
 			{
 			case 'c':
 				k = va_arg(i, int);
-				write(1, k, 1);
+				write(1, &k, 1);
 				m++;
 				format += 2;
 				break;
