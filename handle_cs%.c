@@ -17,7 +17,6 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%' && *(format + 1) != '\0')
 		{
-			j = NULL;
 			switch (*(format + 1))
 			{
 			case 'c':
@@ -25,7 +24,8 @@ int _printf(const char *format, ...)
 				write(1, &k, 1);
 				break;
 			case 's':
-				j = (j == NULL) ? "(null)" : va_arg(i, char *);
+				j = va_arg(i, char *);
+				j = (j == NULL) ? "(null)" : j;
 				write(1, j, strlen(j));
 				break;
 			case '%':
