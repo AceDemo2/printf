@@ -5,9 +5,9 @@ int _printf(const char *format, ...)
 	char l = '%';
         int k, m = 0;
 	va_list i;
-	va_start(i, format);
 	if (format == NULL)
 		return (0);
+	va_start(i, format);
 	while (*format)
         {
 		if (*format == '%' && *(format + 1))
