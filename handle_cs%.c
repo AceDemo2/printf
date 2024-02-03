@@ -28,7 +28,13 @@ int _printf(const char *format, ...)
                                 j = (j == NULL) ? "(null)" : j;
                                 write(1, j, strlen(j));
 			}
-			(*(format + 1) == '%') ? write(1, &l, 1) : (write(1, format, 1), n = 1);
+			else if (*(format + 1) == '%')
+				write(1, &l, 1);
+			else
+			{
+				write(1, format, 1);
+				n = 1;
+			}
 			m = (*(format + 1) != 's') ? m + 1 : m + (int)strlen(j);
 			format = (n == 1) ? format + 1 : format + 2;
 		}
