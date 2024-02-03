@@ -40,8 +40,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			write(1, format, 1);
-			m++;
+			m += write(1, format, 1);
 			format++;
 		}
 	}
