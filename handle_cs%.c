@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 				case 's':
 					j = va_arg(i, char *);
 					if (j == NULL)
-						j = "(nill)";
+						j = "(null)";
 					write(1, j, strlen(j));
 					m += strlen(j);
 					break;
