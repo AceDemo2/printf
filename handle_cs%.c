@@ -39,7 +39,7 @@ int _printf(const char *format, ...)
 					break;
 			}
 		}
-		else if (*(format) == '%' && (*(format + 1)) == '/0')
+		else if (*(format) == '%' && (*(format + 1)) == '\0')
 			return (m);
 		else
 		{
