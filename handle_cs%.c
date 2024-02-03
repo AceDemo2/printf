@@ -31,9 +31,15 @@ int _printf(const char *format, ...)
 					m++;
 					break;
 				default:
+					write(1, *(format + 1), 1), 
 					break;
 			}
 			format += 2;
+		}
+		else if (*format == '%' && !(*(format + 1)))
+		{
+			write(1, format, 1);
+			return (0);
 		}
 		else
 		{
