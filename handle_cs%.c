@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
                     if (j == NULL)
                     {
                         j = "(null)";
-                        m += 6; // Increment by the length of "(null)"
+                        m += 0;
                     }
                     else
                     {
@@ -41,8 +41,7 @@ int _printf(const char *format, ...)
                     m++;
                     break;
                 default:
-                    write(1, format, 2); // Handle unexpected format specifier
-                    m += 2;
+                    write(1, format, 1); 
                     break;
             }
             format += 2;
