@@ -6,7 +6,7 @@
  */
 int _printf(const char *format, ...)
 {
-	char l = '%', *j;
+	char l = '%', *j = NULL;
 	int m = 0, k, n = 0;
 	va_list i;
 	
@@ -24,8 +24,7 @@ int _printf(const char *format, ...)
 				write(1, &k, 1);
 				break;
 			case 's':
-				j = va_arg(i, char *);
-				j = (j == NULL) ? "(null)" : j;
+				j = (j == NULL) ? "(null)" : va_arg(i, char *);
 				write(1, j, strlen(j));
 				break;
 			case '%':
