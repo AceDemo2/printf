@@ -40,7 +40,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			write(1, format, 1);
-			format++;
+			n = 1;
 		}
 		m = (*(format + 1) != 's') ? m + 1 : m + (int)strlen(j);
 		format = (n == 1) ? format + 1 : format + 2;
