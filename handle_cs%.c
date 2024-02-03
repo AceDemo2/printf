@@ -6,7 +6,7 @@ int _printf(const char *format, ...)
         va_start(i, format);
         while (*format)
         {
-                if (*format == %)
+                if (*format == '%')
 		{
 			switch (*(format + 1))
 			{
@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 					write(1, j, strlen(j));
 					break;
 				case '%':
-					write(1, %, 1);
+					write(1, '%', 1);
 					break;
 				default:
 					break;
@@ -29,4 +29,5 @@ int _printf(const char *format, ...)
 			write(1, format, 1);
 		format++;
 	}
+	va_end(i);
 }
