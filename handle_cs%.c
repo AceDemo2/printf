@@ -36,7 +36,6 @@ int _printf(const char *format, ...)
 				write(1, format, 1);
 				break;
 			}
-			format = (n == 1) ? format + 1 : format + 2;
 		}
 		else
 		{
@@ -44,6 +43,7 @@ int _printf(const char *format, ...)
 			format++;
 		}
 		m = (*(format + 1) != 's') ? m + 1 : m + (int)strlen(j);
+		format = (n == 1) ? format + 1 : format + 2;
 	}
 	va_end(i);
 	return (m);
