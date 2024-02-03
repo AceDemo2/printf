@@ -2,6 +2,7 @@
 int _printf(const char *format, ...)
 {       
 	char *j;
+	char k;
         va_list i;
         va_start(i, format);
         while (*format)
@@ -11,8 +12,8 @@ int _printf(const char *format, ...)
 			switch (*(format + 1))
 			{
                         	case 'c':
-                                	j = va_arg(i, int);
-					write(1, j, 1);
+                                	k = va_arg(i, int);
+					write(1, &k, 1);
 					break;
 				case 's':
 					j = va_arg(i, char *);
