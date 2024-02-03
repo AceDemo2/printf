@@ -20,13 +20,13 @@ int _printf(const char *format, ...)
 			if (*(format + 1) == 'c')
 			{
 				k = va_arg(i, int);
-                                write(1, &k, 1);
+				write(1, &k, 1);
 			}
 			else if (*(format + 1) == 's')
 			{
 				j = va_arg(i, char *);
-                                j = (j == NULL) ? "(null)" : j;
-                                write(1, j, strlen(j));
+				j = (j == NULL) ? "(null)" : j;
+				write(1, j, strlen(j));
 			}
 			else if (*(format + 1) == '%')
 				write(1, &l, 1);
