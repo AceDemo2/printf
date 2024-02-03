@@ -42,7 +42,8 @@ int _printf(const char *format, ...)
 		else
 		{
 			write(1, format, 1);
-			n = 1;
+			m++;
+			format++;
 		}
 	}
 	va_end(i);
