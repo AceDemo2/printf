@@ -4,7 +4,7 @@ int _printf(const char *format, ...)
 {
     char *j;
     char l = '%';
-    int k, m = 0, n = 0;
+    int k, m = 0;
     va_list i;
     if (format == NULL)
         return (-1);
@@ -36,7 +36,7 @@ int _printf(const char *format, ...)
                 break;
             default:
                 write(1, format, 1);
-                m = (n == 0) ? m + 1 : -1;
+                m++;
                 format += 1;
                 break;
             }
@@ -46,7 +46,7 @@ int _printf(const char *format, ...)
         else
         {
             write(1, format, 1);
-            m = (n == 0) ? m + 1 : -1;
+            m++;
             format++;
         }
     }
