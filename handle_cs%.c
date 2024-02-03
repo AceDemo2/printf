@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 	int m = 0, k, n = 0;
 	va_list i;
 
-	if (format == NULL || (*format == '%' && *(format + 1) == '\0'))
+	(format == NULL || (*format == '%' && *(format + 1) == '\0')) ? (va_end(i), -1) : va_start(i, format);
 		return (-1);
 	va_start(i, format);
 	while (*format)
@@ -24,9 +24,7 @@ int _printf(const char *format, ...)
 				write(1, &k, 1);
 				break;
 			case 's':
-				j = va_arg(i, char *);
-				if (j == NULL)
-					j = "(null)";
+				j = (j == NULL) ? "(null)" : va_arg(i, char *);
 				write(1, j, strlen(j));
 				break;
 			case '%':
