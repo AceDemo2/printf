@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
                                 write(1, &k, 1);
                                 break;
                         case 's':
-				j = va_arg(i, char *)
+				j = va_arg(i, char *);
                                 j = (j == NULL) ? "(null)" : j;
                                 write(1, j, strlen(j));
                                 break;
