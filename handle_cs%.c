@@ -1,12 +1,12 @@
 #include "main.h"
 int _printf(const char *format, ...)
 {       
-	if (format == NULL)
-		return (0);
 	char *j;
 	char l = '%';
         int k, m = 0;
 	va_list i;
+	if (format == NULL)
+		return (0);
 	va_start(i, format);
 	while (*format)
         {
