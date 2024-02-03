@@ -40,7 +40,7 @@ int _printf(const char *format, ...)
 			}
 		}
 		else if (*(format) == '%' && (*(format + 1)) == '\0')
-			return (m);
+			return (-1);
 		else
 		{
 			write(1, format, 1);
