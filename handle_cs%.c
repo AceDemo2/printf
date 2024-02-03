@@ -13,8 +13,10 @@ int _printf(const char *format, ...)
 	if (format == NULL || (*format == '%' && *(format + 1) == '\0'))
 		return (-1);
 	va_start(i, format);
-	while (*format){
-		if (*format == '%' && *(format + 1) != '\0'){
+	while (*format)
+	{
+		if (*format == '%' && *(format + 1) != '\0')
+		{
 			switch (*(format + 1))
 			{
 			case 'c':
