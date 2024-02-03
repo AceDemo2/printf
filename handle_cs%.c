@@ -43,9 +43,15 @@ int _printf(const char *format, ...)
 			return (-1);
 		else
 		{
-			write(1, format, 1);
-			m++;
-			format++;
+			if (*(format - 1) == '%')
+				return (-1);
+			else
+			{
+				write(1, format, 1);
+				m++;
+				format++;
+		
+			}
 		}
 	}
 	va_end(i);
