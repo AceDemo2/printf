@@ -9,8 +9,8 @@ int _printf(const char *format, ...)
 	char l = '%', *j;
 	int m = 0, k, n = 0;
 	va_list i;
-
-	(format == NULL || (*format == '%' && *(format + 1) == '\0')) ? (va_end(i), -1) : va_start(i, format);
+	
+	return ((format == NULL || (*format == '%' && *(format + 1) == '\0')) ? -1 : 0);
 	while (*format)
 	{
 		if (*format == '%' && *(format + 1) != '\0')
