@@ -4,9 +4,9 @@
 
 int _printf(const char *format, ...) {
     va_list args;
+    int count = 0;
     va_start(args, format);
 
-    int count = 0;
 
     while (*format) {
         if (*format == '%') {
@@ -22,7 +22,6 @@ int _printf(const char *format, ...) {
                     count += write(1, "%", 1);
                     break;
                 default:
-                    // Unsupported specifier, ignore
                     break;
             }
         } else {
