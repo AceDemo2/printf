@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 			switch (*(format + 1))
 			{
 			case 'c':
-				write(1, &(k = va_arg(i, int)), 1);
+				write(1, &(va_arg(i, int)), 1);
 				m++;
 				format += 2;
 				break;
