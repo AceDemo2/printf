@@ -36,14 +36,14 @@ int _printf(const char *format, ...)
 				write(1, format, 1);
 				break;
 			}
+			m = (*(format + 1) != 's') ? m + 1 : m + (int)strlen(j);
+			format = (n == 1) ? format + 1 : format + 2;
 		}
 		else
 		{
 			write(1, format, 1);
 			n = 1;
 		}
-		m = (*(format + 1) != 's') ? m + 1 : m + (int)strlen(j);
-		format = (n == 1) ? format + 1 : format + 2;
 	}
 	va_end(i);
 	return (m);
