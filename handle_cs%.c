@@ -45,7 +45,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			write(1, format, 1);
-			(n == 0) ? m++ : m = -1;
+			m = (n == 0) ? m + 1 : -1;
 			format++;
 		}
 	}
