@@ -1,23 +1,18 @@
 #include "main.h"
-
 /**
  * _printf - Custom printf function
  * @format: Format string
- *
  * Return: Number of characters printed (excluding null byte)
  */
 int _printf(const char *format, ...)
 {
-	char *j;
-	char l = '%';
-	int k, m = 0;
+	char l = '%', *j;
+	int m = 0;
 	va_list i;
 
-	if (format == NULL)
+	if (format == NULL || (*format == '%' && *(format + 1) == '\0'))
 		return (-1);
-
 	va_start(i, format);
-
 	while (*format)
 	{
 		if (*format == '%' && *(format + 1) != '\0')
@@ -25,8 +20,7 @@ int _printf(const char *format, ...)
 			switch (*(format + 1))
 			{
 			case 'c':
-				k = va_arg(i, int);
-				write(1, &k, 1);
+				write(1, &(k = va_arg(i, int)), 1);
 				m++;
 				format += 2;
 				break;
@@ -50,17 +44,10 @@ int _printf(const char *format, ...)
 				break;
 			}
 		}
-		else if (*format == '%' && *(format + 1) == '\0')
-			return (-1);
-		else
-		{
-			write(1, format, 1);
-			m++;
-			format++;
-		}
+		write(1, format, 1);
+		m++;
+		format++;
 	}
-
 	va_end(i);
 	return (m);
 }
-
