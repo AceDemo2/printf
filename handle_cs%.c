@@ -39,11 +39,6 @@ int _printf(const char *format, ...)
 					break;
 			}
 		}
-		else if (*format == '%' && !(*(format + 1)))
-		{
-			write(1, format, 1);
-			return (0);
-		}
 		else
 		{
 			write(1, format, 1);
