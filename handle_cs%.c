@@ -7,7 +7,7 @@
 int _printf(const char *format, ...)
 {
 	char l = '%', *j;
-	int m = 0, k;
+	int m = 0, k, n = 0;
 	va_list i;
 
 	if (format == NULL || (*format == '%' && *(format + 1) == '\0'))
@@ -22,28 +22,23 @@ int _printf(const char *format, ...)
 			case 'c':
 				k = va_arg(i, int);
 				write(1, &k, 1);
-				m++;
-				format += 2;
 				break;
 			case 's':
 				j = va_arg(i, char *);
 				if (j == NULL)
 					j = "(null)";
 				write(1, j, strlen(j));
-				m += strlen(j);
-				format += 2;
 				break;
 			case '%':
 				write(1, &l, 1);
-				m++;
-				format += 2;
 				break;
 			default:
+				n = 1;
 				write(1, format, 1);
-				m++;
-				format += 1;
 				break;
 			}
+			m = (*(format + 1) != 's') ? m + 1 : m + strlen(j);
+			format = (n == 1) ? format + 1 : format + 2;
 		}
 		else
 		{
