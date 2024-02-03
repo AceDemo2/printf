@@ -6,9 +6,11 @@ int _printf(const char *format, ...)
         int k, m = 0;
 	va_list i;
 	va_start(i, format);
+	if (format == NULL)
+		return (0);
 	while (*format)
         {
-		if (*format == '%')
+		if (*format == '%' && *(format + 1))
 		{
 			switch (*(format + 1))
 			{
