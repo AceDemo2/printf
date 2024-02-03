@@ -41,19 +41,14 @@ int _printf(const char *format, ...)
 			}
 		}
 		else if (*(format) == '%' && *(format + 1) == '\0')
-		{
-			write(1, format, 1);
 			return (-1);
-		}
 		else
 		{
 			write(1, format, 1);
-			m++;
+			(n == 0) ? m++ : m = -1;
 			format++;
 		}
 	}
 	va_end(i);
-	if (n == 1)
-		return (-1);
 	return (m);
 }
