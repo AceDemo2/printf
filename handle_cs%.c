@@ -37,13 +37,13 @@ int _printf(const char *format, ...)
 				break;
 			}
 			format = (n == 1) ? format + 1 : format + 2;
+			m = (*(format + 1) != 's') ? m + 1 : m + (int)strlen(j);
 		}
 		else
 		{
 			write(1, format, 1);
 			format++;
 		}
-		m = (*(format + 1) != 's') ? m + 1 : m + (int)strlen(j);
 	}
 	va_end(i);
 	return (m);
