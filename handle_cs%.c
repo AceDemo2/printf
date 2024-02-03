@@ -7,7 +7,7 @@
 int _printf(const char *format, ...)
 {
 	char l = '%', *j;
-	int m = 0;
+	int m = 0, k;
 	va_list i;
 
 	if (format == NULL || (*format == '%' && *(format + 1) == '\0'))
@@ -20,7 +20,8 @@ int _printf(const char *format, ...)
 			switch (*(format + 1))
 			{
 			case 'c':
-				write(1, &(va_arg(i, int)), 1);
+				k = va_arg(i, int);
+				write(1, &k 1);
 				m++;
 				format += 2;
 				break;
