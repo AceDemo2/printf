@@ -3,7 +3,7 @@ int _printf(const char *format, ...)
 {       
 	char *j;
 	char l = '%';
-        int k, m = 0, n = 0;
+        int k, m = 0;
 	va_list i;
 	if (format == NULL)
 		return (-1);
