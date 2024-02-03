@@ -51,6 +51,6 @@ int _printf(const char *format, ...)
 	}
 	va_end(i);
 	if (n == 1)
-		return (0);
+		return (-1);
 	return (m);
 }
