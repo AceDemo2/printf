@@ -36,7 +36,6 @@ int _printf(const char *format, ...)
 						return (-1);
 					}
 					k[l + 1] = '\0';
-					l;
 					while (l >= 0)
 					{
 						k[l] = j % 10 + '0';
