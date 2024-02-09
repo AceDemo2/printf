@@ -1,7 +1,8 @@
 #include "main.h"
 int handle_u(unsigned int u)
 {
-	unsigned int i = 0, j, k = 0, l, m = 0;
+	unsigned int i = 0, k = 0, l, m = 0;
+	char * j;
 
 	if (u == 0)
 	{
