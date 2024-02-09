@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 						l++;
 					else
 					{
-						o = j
+						o = j;
 						while (o != 0)
 						{
 							o = o / 10;
