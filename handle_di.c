@@ -2,8 +2,6 @@ int handle_id(long j)
 {
   long int l = 0, m = 0, o, n;
 	char *k;
-          format += 2;
-					
 					if (j < 0)
 					{
 						m += write(1, "-", 1);
