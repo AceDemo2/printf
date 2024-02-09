@@ -12,6 +12,7 @@ int _printf(const char *format, ...)
 		{
 			if (*(format + 1) == 'i' || *(format + 1) == 'd')
 				{
+					format += 2;
 					j = va_arg(i, int);
 					if (j < 0)
 					{
@@ -46,7 +47,6 @@ int _printf(const char *format, ...)
 					}
 					write(1, k, strlen(k));
 					free(k);
-					format += 2;
 				}
 		}
 		else
