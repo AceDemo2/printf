@@ -35,12 +35,13 @@ int _printf(const char *format, ...)
 						va_end(i);
 						return (-1);
 					}
-					k[l + 1] = '\0';
-					while (l >= 0)
+					k[l] = '\0';
+					n = l - 1;
+					while (n >= 0)
 					{
-						k[l] = j % 10 + '0';
+						k[n] = j % 10 + '0';
 						m++;
-						l--;
+						n--;
 						j /= 10;
 					}
 					write(1, k, strlen(k));
