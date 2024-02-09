@@ -1,7 +1,7 @@
 #include "main.h"
 int _printf(const char *format, ...)
 {
-	int *i, l, m = 0, j, n, o;
+	int l, m = 0, j, n, o;
 	char *k;
 	va_list i;
 
