@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 							l++;
 						}
 					}
-					k = malloc(sizeof(char) * l + 2);
+					k = malloc(sizeof(char) * l + 1);
 					if (k == NULL)
 					{
 						va_end(i);
@@ -53,8 +53,8 @@ int _printf(const char *format, ...)
 		{
 			write(1, format, 1);
 			m++;
+			format++;
 		}
-		format++;
 	}
 	va_end(i);
 	return (m);
