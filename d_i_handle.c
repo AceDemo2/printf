@@ -1,7 +1,7 @@
 #include "main.h"
 int _printf(const char *format, ...)
 {
-	unsigned int l = 0, m = 0, j, o, n;
+	long int l = 0, m = 0, j, o, n;
 	char *k;
 	va_list i;
 
@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 			if (*(format + 1) == 'i' || *(format + 1) == 'd')
 				{
 					format += 2;
-					j = va_arg(i, unsigned int);
+					j = va_arg(i, long int);
 					if (j < 0)
 					{
 						m += write(1, "-", 1);
