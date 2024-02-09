@@ -1,7 +1,7 @@
 #include "main.h"
+	extern char format;
 int handle_id(long j)
 {
-	extern char format;
 	va_list i;
   long int l = 0, m = 0, o, n;
 	char *k;
