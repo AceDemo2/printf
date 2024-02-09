@@ -4,7 +4,7 @@ int handle_b(unsigned int b)
 	unsigned int l = 0, k, m = 0;
 	char *j;
 	k = b;
-	if (b == 0)i
+	if (b == 0)
 	{
 		write(1, "0", 1);
 		m = 1;
