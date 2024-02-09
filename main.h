@@ -7,4 +7,5 @@
 #include <stdlib.h>
 
 int _printf(const char *format, ...);
+int handle_id(long j);
 #endif
