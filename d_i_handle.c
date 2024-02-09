@@ -1,7 +1,7 @@
 #include "main.h"
 int _printf(const char *format, ...)
 {
-	int l, m = 0, j, n, o;
+	int l, m = 0, j, o;
 	char *k;
 	va_list i;
 
@@ -32,11 +32,11 @@ int _printf(const char *format, ...)
 					k = malloc(sizeof(char) * l + 1);
 					if (k == NULL)
 					{
-						va_va_end(i);
-						return;
+						va_end(i);
+						return (-1);
 					}
 					k[l + 1] = '\0';
-					n = l;
+					l;
 					while (l >= 0)
 					{
 						k[l] = j % 10 + '0';
@@ -53,7 +53,7 @@ int _printf(const char *format, ...)
 			write(1, format, 1);
 			m++;
 		}
-		formart++;
+		format++;
 	}
 	va_end(i);
 	return (m);
