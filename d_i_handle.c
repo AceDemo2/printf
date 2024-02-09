@@ -47,6 +47,7 @@ int _printf(const char *format, ...)
 					}
 					write(1, k, strlen(k));
 					free(k);
+					l = 0;
 				}
 		}
 		else
