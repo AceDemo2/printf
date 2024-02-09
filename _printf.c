@@ -1,7 +1,7 @@
 #include "main.h"
 int _printf(const char *format, ...)
 {
-	int m = 0;
+	int m = 0, n = 0;
 	va_list i;
 
 	va_start(i, format);
@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 			else if (*(format + 1) == 's')
 				m += handle_s(va_arg(i, char *));
 			else if (*(format + 1) == '%')
-				m += write(1, &l, 1);
+				m += write(1, '%', 1);
 			else if (*(format + 1) == 'i' || *(format + 1) == 'd')
 				m += handle_id((long)va_arg(i, int));
 			else
