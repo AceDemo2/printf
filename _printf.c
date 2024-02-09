@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 			else if (*(format + 1) == 's')
 				m += handle_s(va_arg(i, char *));
 			else if (*(format + 1) == '%')
-				m += write(1, '%', 1);
+				m += write(1, "%", 1);
 			else if (*(format + 1) == 'i' || *(format + 1) == 'd')
 				m += handle_id((long)va_arg(i, int));
 			else
