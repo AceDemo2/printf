@@ -1,9 +1,9 @@
-int handle_id(long n)
+int handle_id(long j)
 {
-  long int l = 0, m = 0, j, o, n;
+  long int l = 0, m = 0, o, n;
 	char *k;
           format += 2;
-					j = va_arg(i, int);
+					
 					if (j < 0)
 					{
 						m += write(1, "-", 1);
