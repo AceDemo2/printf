@@ -12,6 +12,7 @@ int _printf(const char *format, ...)
 			if (*(format + 1) == 'i' || *(format + 1) == 'd')
 				{
 					m += handle_id((long)va_arg(i, int));
+  					format += 2;
 				}
 		}
 		else

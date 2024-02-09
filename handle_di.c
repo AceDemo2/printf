@@ -1,5 +1,4 @@
 #include "main.h"
-	extern char format;
 int handle_id(long j)
 {
 	va_list i;
@@ -39,7 +38,6 @@ int handle_id(long j)
 					write(1, k, strlen(k));
 					free(k);
   l = 0;
-  format += 2;
   return (m);
 }
 					
