@@ -26,6 +26,8 @@ int _printf(const char *format, ...)
 				m += handle_id((long)va_arg(i, int));
 			else if (*(format + 1) == 'b')
 				m += handle_b(va_arg(i, unsigned int));
+			else if (*(format + 1) == 'u')
+				m += handle_u(va_arg(i, unsigned int));
 			else
 			{
 				m += write(1, format, 1);

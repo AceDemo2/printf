@@ -10,4 +10,5 @@ int handle_id(long j);
 int handle_c(int c);
 int handle_s(char *j);
 int handle_b(unsigned int b);
+int handle_u(unsigned int u);
 #endif
