@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 			if (*(format + 1) == 'i' || *(format + 1) == 'd')
 				{
 					format += 2;
-					j = va_arg(i, long int);
+					j = va_arg(i, int);
 					if (j < 0)
 					{
 						m += write(1, "-", 1);
