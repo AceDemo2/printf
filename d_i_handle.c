@@ -55,6 +55,6 @@ int _printf(const char *format, ...)
 		}
 		formart++;
 	}
-	va_end(i
+	va_end(i);
 	return (m);
 }
