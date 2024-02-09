@@ -1,8 +1,7 @@
 #include "main.h"
 int _printf(const char *format, ...)
 {
-	long int l = 0, m = 0, j, o, n;
-	char *k;
+	int m = 0;
 	va_list i;
 
 	va_start(i, format);
