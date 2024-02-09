@@ -43,7 +43,7 @@ int _printf(const char *format, ...)
 						l--;
 						j /= 10;
 					}
-					write(1, k, l + 1);
+					write(1, k, strlen(k));
 					free(k);
 				}
 		}
