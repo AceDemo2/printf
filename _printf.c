@@ -28,6 +28,10 @@ int _printf(const char *format, ...)
 				m += handle(va_arg(i, unsigned int), 2);
 			else if (*(format + 1) == 'u')
 				m += handle(va_arg(i, unsigned int), 10);
+			else if (*(format + 1) == 'o')
+				m += handle(va_arg(i, unsigned int), 8);
+			else if (*(format + 1) == 'x')
+				m += handle(va_arg(i, unsigned int), 16);
 			else
 			{
 				m += write(1, format, 1);
