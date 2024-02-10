@@ -36,6 +36,8 @@ int _printf(const char *format, ...)
 				m += handle(va_arg(i, unsigned int), 16, 1);
 			else if (*(format + 1) == 'S')
 				m += custom_specifier(va_arg(i, char *));
+			else if (*(format + 1) == 'p')
+				m += handle(va_arg(i, unsigned int), 16, 2);
 			else
 			{
 				m += write(1, format, 1);

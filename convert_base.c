@@ -16,7 +16,7 @@ int handle(unsigned int b, int c, int a)
 			b /= c;
 			l++;
 		}
-		j = malloc(sizeof(unsigned int) * l);
+		j = malloc(sizeof(unsigned int) * l + 2);
 		if (j == NULL)
 		{
 			return(-1);
@@ -30,6 +30,8 @@ int handle(unsigned int b, int c, int a)
 			k /= c;
 			m++;
 		}
+		if (a == 2)
+			write(1, "0x", 2);
 		write(1, j, strlen(j));
 		free(j);
 		l = 0;
