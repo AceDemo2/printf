@@ -38,6 +38,8 @@ int _printf(const char *format, ...)
 				m += custom_specifier(va_arg(i, char *));
 			else if (*(format + 1) == 'p')
 				m += handle_p(va_arg(i, void *));
+			else if (*(format + 1) == 'r')
+				m += handle_r(va_arg(i, char *));
 			else
 			{
 				m += write(1, format, 1);
