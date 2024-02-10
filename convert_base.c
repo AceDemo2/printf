@@ -26,7 +26,7 @@ int handle(unsigned int b, int c, int a)
 		{
 			l--;
 			n = (k % c);
-			j[l] = (a == 1) ? p[n] : o[n];
+			j[l] = (a == 1 || a == 2) ? p[n] : o[n];
 			k /= c;
 			m++;
 		}
