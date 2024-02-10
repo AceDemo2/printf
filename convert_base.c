@@ -1,8 +1,8 @@
 #include "main.h"
 int handle(unsigned int b, int c, int a)
 {
-	unsigned int l = 0, k, m = 0;
-	char *j, o = "0123456789ABCDEF", p = "0123456789abcdef";
+	unsigned int l = 0, k, m = 0, n;
+	char *j, *o = "0123456789ABCDEF", *p = "0123456789abcdef";
 	k = b;
 	if (b == 0)
 	{
