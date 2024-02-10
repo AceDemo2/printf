@@ -1,5 +1,5 @@
 #include "main.h"
-int handle_p(void * p)
+int handle_p(void *p)
 {
 	int m = 0;
 	unsigned int a = (unsigned int)p;
