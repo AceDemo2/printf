@@ -1,7 +1,7 @@
 #include "main.h"
-int handle(long int b, int c, int a)
+int handle(unsigned long int b, int c, int a)
 {
-	long int l = 0, k, m = 0, n;
+	unsigned long int l = 0, k, m = 0, n;
 	char *j, *o = "0123456789ABCDEF", *p = "0123456789abcdef";
 	k = b;
 	if (b == 0)
@@ -16,7 +16,7 @@ int handle(long int b, int c, int a)
 			b /= c;
 			l++;
 		}
-		j = malloc(sizeof(long int) * l + 2);
+		j = malloc(sizeof(unsigned long int) * l + 2);
 		if (j == NULL)
 		{
 			return(-1);
