@@ -11,7 +11,7 @@ int handle_r(char *r)
 	if (a == NULL)
 		return (-1);
 	l = j - 1;
-	while (i < j / 2)
+	while (i <= j / 2)
 	{
 		b = r[i];
 		a[i] = r[l];
