@@ -31,6 +31,6 @@ int custom_specifier(char *c)
 		}
 	}
 	m += write(1, d, strlen(d));
-	freee(d);
+	free(d);
 	return (m);
 }
