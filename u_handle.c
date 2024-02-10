@@ -10,7 +10,7 @@ int handle(unsigned int b, int c)
 		return (1);
 	}
 	l = b;
-	while (u != 0)
+	while (b != 0)
 	{
 		u /= c;
 		i++;
