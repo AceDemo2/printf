@@ -31,11 +31,6 @@ int handle(unsigned int b, int c, int a)
 			k /= c;
 			m++;
 		}
-		if (a == 2 && q == 1)
-		{
-			j[0] = '0';
-			j[1] = j[0];
-		}
 		write(1, j, strlen(j));
 		free(j);
 		l = 0;
