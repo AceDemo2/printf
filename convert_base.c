@@ -31,7 +31,7 @@ int handle(unsigned int b, int c, int a)
 			m++;
 		}
 		if (a == 2)
-			write(1, "0x", 2);
+			m += write(1, "0x", 2);
 		write(1, j, strlen(j));
 		free(j);
 		l = 0;
