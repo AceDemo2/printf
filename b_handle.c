@@ -1,5 +1,5 @@
 #include "main.h"
-int handle_b(unsigned int b)
+int handle(unsigned int b, int c)
 {
 	unsigned int l = 0, k, m = 0;
 	char *j;
@@ -13,7 +13,7 @@ int handle_b(unsigned int b)
 	{
 		while (b != 0)
 		{
-			b /= 2;
+			b /= c;
 			l++;
 		}
 		j = malloc(sizeof(unsigned int) * l);
@@ -25,8 +25,8 @@ int handle_b(unsigned int b)
 		while(l > 0)
 		{
 			l--;
-			j[l] = (k % 2) + '0';
-			k /= 2;
+			j[l] = (k % c) + '0';
+			k /= c;
 			m++;
 		}
 		write(1, j, strlen(j));
