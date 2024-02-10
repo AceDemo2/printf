@@ -13,7 +13,7 @@ int handle_r(char *r)
 	l = j - 1;
 	while (i < j / 2)
 	{
-		b = a[i];
+		b = r[i];
 		a[i] = r[l];
 		a[l] = b;
 		i++;
