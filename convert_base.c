@@ -1,8 +1,8 @@
 #include "main.h"
-int handle(unsigned int b, int c)
+int handle(unsigned int b, int c, int a)
 {
 	unsigned int l = 0, k, m = 0;
-	char *j;
+	char *j, o = "0123456789ABCDEF", p = "0123456789abcdef";
 	k = b;
 	if (b == 0)
 	{
@@ -25,7 +25,8 @@ int handle(unsigned int b, int c)
 		while(l > 0)
 		{
 			l--;
-			j[l] = (k % c) + '0';
+			n = (k % c);
+			j[l] = (a == 1) ? p[n] : o[n];
 			k /= c;
 			m++;
 		}
