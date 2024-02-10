@@ -28,9 +28,9 @@ int custom_specifier(char *c)
 		else
 		{
 			d[j] = c[i];
-			i++;
 			j++;
 		}
+		i++;
 	}
 	m += write(1, d, strlen(d));
 	free(d);
