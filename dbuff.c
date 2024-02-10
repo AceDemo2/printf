@@ -4,7 +4,6 @@ void dbuff(int a, char *b)
 	int i = 2, d;
 	char *c = "0123456789ABCDEF";
 
-	b[i] = '\0';
 	while (i > 0)
 	{
 		i--;
