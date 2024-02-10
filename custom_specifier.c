@@ -14,6 +14,8 @@ int custom_specifier(char *c)
 		k++;
 	}
 	d = malloc(sizeof(char) * l + 1);
+	if (d == NULL)
+		return (-1);
 	while (c[i])
 	{
 		if (c[i] < 32 || c[i] >= 127)
