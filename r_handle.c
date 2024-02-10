@@ -19,7 +19,7 @@ int handle_r(char *r)
 		i++;
 		l--;
 	}
-	m = write(1, a, strlen(a));
+	m = write(1, a, j);
 	free(a);
 	return (m);
 }
