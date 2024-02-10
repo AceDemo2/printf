@@ -4,12 +4,12 @@ int handle(unsigned int b, int c)
 	unsigned int i = 0, k = 0, l, m = 0;
 	char * j;
 
-	if (u == 0)
+	if (b == 0)
 	{
 		write(1, "0", 1);
 		return (1);
 	}
-	l = u;
+	l = b;
 	while (u != 0)
 	{
 		u /= c;
