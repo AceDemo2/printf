@@ -1,5 +1,5 @@
 #include "main.h"
-int handle(unsigned int b, int c, int a)
+int handle(unsigned long b, int c, int a)
 {
 	unsigned int l = 0, k, m = 0, n;
 	char *j, *o = "0123456789ABCDEF", *p = "0123456789abcdef";
@@ -16,10 +16,17 @@ int handle(unsigned int b, int c, int a)
 			b /= c;
 			l++;
 		}
-		j = malloc(sizeof(unsigned int) * l + 2);
-		if (j == NULL)
+		if (a == 2)
 		{
-			return(-1);
+			j = malloc(sizeof(unsigned long) * l + 2);
+                	if (j == NULL)
+                        	return(-1);
+		}
+		else
+		{
+			j = malloc(sizeof(unsigned int) * l + 2);
+			if (j == NULL)
+				return(-1);
 		}
 		j[l] = '\0';
 		while(l > 0)
