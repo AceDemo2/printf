@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 			else if (*(format + 1) == 'i' || *(format + 1) == 'd')
 				m += handle_id((long)va_arg(i, int));
 			else if (*(format + 1) == 'b')
-				m += handle(va_arg(i, unsigned long int), 2, 0);
+				m += handle(va_arg(i, unsigned long), 2, 0);
 			else if (*(format + 1) == 'u')
 				m += handle(va_arg(i, long int), 10, 0);
 			else if (*(format + 1) == 'o')
