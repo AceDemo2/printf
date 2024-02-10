@@ -40,6 +40,8 @@ int _printf(const char *format, ...)
 				m += handle_p(va_arg(i, void *));
 			else if (*(format + 1) == 'r')
 				m += handle_r(va_arg(i, char *));
+			else if (*(format + 1) == 'R')
+				m += handle_R(va_arg(i, char *));
 			else
 			{
 				m += write(1, format, 1);
