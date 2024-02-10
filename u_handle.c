@@ -12,7 +12,7 @@ int handle(unsigned int b, int c)
 	l = b;
 	while (b != 0)
 	{
-		u /= c;
+		b /= c;
 		i++;
 	}
 	j = malloc(sizeof(int) * i);
