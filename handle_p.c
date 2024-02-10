@@ -3,7 +3,10 @@
 int handle_p(void *p)
 {
 	int m = 0;
-	uintptr_t a = (uintptr_t)p;
-	m += handle(a, 16, 2);
+
+	if (p == NULL)
+		m += write(1, "(nill)", 5);
+	else
+		m += handle((unsigned long)p, 16, 2);
 	return (m);
 }
