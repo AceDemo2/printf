@@ -12,4 +12,5 @@ int handle_s(char *j);
 int custom_specifier(char *c);
 int handle(unsigned int b, int c, int a);
 void dbuff(int a, char *b);
+int handle_p(void * p);
 #endif
