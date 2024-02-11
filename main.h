@@ -15,4 +15,6 @@ void dbuff(int a, char *b);
 int handle_p(void * p);
 int handle_r(char *r);
 int handle_R(char *r);
+int handle_flags(char *f);
+
 #endif

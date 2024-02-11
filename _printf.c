@@ -17,8 +17,8 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%' && *(format + 1))
 		{
-			j = *(format + 1);
-			if (j == '+' || j == ' ' || j == '#')
+			*j = *(format + 1);
+			if (*j == '+' || *j == ' ' || *j == '#')
 				m += handle_flags(j);
 			else if (*(format + 1) == 'c')
 				m += handle_c(va_arg(i, int));
