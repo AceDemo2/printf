@@ -8,7 +8,7 @@ int _printf(const char *format, ...)
 {
 	int m = 0, n = 0, l = 0;
 	va_list i;
-	char *j = NULL, k;
+	char *j = k;
 
 	if (format == NULL || (*format == '%' && *(format + 1) == '\0'))
 		return (-1);
@@ -17,50 +17,51 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%' && *(format + 1))
 		{
+			format++;
 			k = {'+', ' ', '#'};
-			*j = *(format + 1);
 			l = 0;
 			while (k[l])
 			{
-				if (*j = k[l])
+				if (*(format) = k[l])
 				{
 					m += handle_flags(j);
-					format;
+					l = 0;
+					format++;
 				}
-				l++;
+				else
+				{
+					l++;
+				}
 			}
-			else if (*(format + 1) == 'c')
+			if (*(format) == 'c')
 				m += handle_c(va_arg(i, int));
-			else if (*(format + 1) == 's')
+			else if (*(format) == 's')
 				m += handle_s(va_arg(i, char *));
-			else if (*(format + 1) == '%')
+			else if (*(format) == '%')
 				m += write(1, "%", 1);
-			else if (*(format + 1) == 'i' || *(format + 1) == 'd')
+			else if (*(format) == 'i' || *(format + 1) == 'd')
 				m += handle_id((long)va_arg(i, int));
-			else if (*(format + 1) == 'b')
+			else if (*(format) == 'b')
 				m += handle(va_arg(i, unsigned int), 2, 0);
-			else if (*(format + 1) == 'u')
+			else if (*(format) == 'u')
 				m += handle(va_arg(i, unsigned int), 10, 0);
-			else if (*(format + 1) == 'o')
+			else if (*(format) == 'o')
 				m += handle(va_arg(i, unsigned int), 8, 0);
-			else if (*(format + 1) == 'X')
+			else if (*(format) == 'X')
 				m += handle(va_arg(i, unsigned int), 16, 0);
-			else if (*(format + 1) == 'x')
+			else if (*(format) == 'x')
 				m += handle(va_arg(i, unsigned int), 16, 1);
-			else if (*(format + 1) == 'S')
+			else if (*(format) == 'S')
 				m += custom_specifier(va_arg(i, char *));
-			else if (*(format + 1) == 'p')
+			else if (*(format) == 'p')
 				m += handle_p(va_arg(i, void *));
-			else if (*(format + 1) == 'r')
+			else if (*(format) == 'r')
 				m += handle_r(va_arg(i, char *));
-			else if (*(format + 1) == 'R')
+			else if (*(format) == 'R')
 				m += handle_R(va_arg(i, char *));
 			else
-			{
 				m += write(1, format, 1);
-				n = 1;
-			}
-			format = (n == 1) ? format + 1 : format + 2;
+			format++;
 		}
 		else
 		{
