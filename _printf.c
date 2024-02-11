@@ -19,7 +19,10 @@ int _printf(const char *format, ...)
 		{
 			*j = *(format + 1);
 			if (*j == '+' || *j == ' ' || *j == '#')
+			{
 				m += handle_flags(j);
+				n = 1;
+			}
 			else if (*(format + 1) == 'c')
 				m += handle_c(va_arg(i, int));
 			else if (*(format + 1) == 's')
