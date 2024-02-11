@@ -6,7 +6,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int m = 0, l = 0, j;
+	int m = 0, l = 0, j, o = 0;
 	va_list i;
 	const char *k;
 
@@ -25,6 +25,7 @@ int _printf(const char *format, ...)
 				if (*(format) == k[l])
 				{
 					j = va_arg(i, int);
+					o = 1
 					if (j > 0)
 					{
 						m += write(1, format, 1);
@@ -38,13 +39,23 @@ int _printf(const char *format, ...)
 				}
 			}
 			if (*(format) == 'c')
-				m += handle_c(va_arg(i, int));
+			{
+				if (o == 1)
+					m += handle_c(j);
+				else
+					m += handle_c(v a_arg(i, int));
+			}
 			else if (*(format) == 's')
 				m += handle_s(va_arg(i, char *));
 			else if (*(format) == '%')
 				m += write(1, "%", 1);
 			else if (*(format) == 'i' || *(format) == 'd')
-				m += handle_id((long)va_arg(i, int));
+			{	
+	       			if (o == 1)
+                                        m += handle_id(j);
+                                else
+                                        m += handle_id((long)va_arg(i, int));
+			}
 			else if (*(format) == 'b')
 				m += handle(va_arg(i, unsigned int), 2, 0);
 			else if (*(format) == 'u')
