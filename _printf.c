@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 			{
 				if (*(format) = k[l])
 				{
-					m += handle_flags(j);
+					m += handle_flags(format);
 					l = 0;
 					format++;
 				}
