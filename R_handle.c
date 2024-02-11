@@ -17,12 +17,6 @@ int handle_R(char *r)
 			}
 			j++;
 		}
-		if (!a[j])
-		{
-			j = 0;
-			i++;
-			continue;
-		}
 		i++;
 	}
 	m = write(1, r, strlen(r));
