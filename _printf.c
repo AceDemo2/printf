@@ -16,7 +16,9 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%' && *(format + 1))
 		{
-			if (*(format + 1) == 'c')
+			if (*(format + 1) == '+')
+				handle_flags();
+			else if (*(format + 1) == 'c')
 				m += handle_c(va_arg(i, int));
 			else if (*(format + 1) == 's')
 				m += handle_s(va_arg(i, char *));
