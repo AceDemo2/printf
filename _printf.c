@@ -24,9 +24,12 @@ int _printf(const char *format, ...)
 			{
 				if (*(format) == k[l])
 				{
-					m += write(1, format, 1);
-					format++;
-					l = 0;
+					if (va_arg(i, int) > 0)
+					{
+						m += write(1, format, 1);
+						format++;
+						l = 0;
+					}
 				}
 				else
 				{
