@@ -6,7 +6,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int m = 0, l = 0;
+	int m = 0, l = 0, j;
 	va_list i;
 	const char *k;
 
@@ -24,7 +24,8 @@ int _printf(const char *format, ...)
 			{
 				if (*(format) == k[l])
 				{
-					if (va_arg(i, unsigned int) > 0)
+					j = va_arg(i, int);
+					if (j > 0)
 					{
 						m += write(1, format, 1);
 						format++;
