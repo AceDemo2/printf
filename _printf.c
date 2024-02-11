@@ -8,7 +8,7 @@ int _printf(const char *format, ...)
 {
 	int m = 0, l = 0;
 	va_list i;
-	char k[3];
+	char *k = "+ #";
 
 	if (format == NULL || (*format == '%' && *(format + 1) == '\0'))
 		return (-1);
@@ -18,7 +18,6 @@ int _printf(const char *format, ...)
 		if (*format == '%' && *(format + 1))
 		{
 			format++;
-			k = "+ #";
 			l = 0;
 			while (k[l])
 			{
@@ -60,7 +59,10 @@ int _printf(const char *format, ...)
 			else if (*(format) == 'R')
 				m += handle_R(va_arg(i, char *));
 			else
+			{
+				format--;
 				m += write(1, format, 1);
+			}
 			format++;
 		}
 		else
