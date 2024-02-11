@@ -6,9 +6,9 @@
  */
 int _printf(const char *format, ...)
 {
-	int m = 0, n = 0;
+	int m = 0, n = 0, l = 0;
 	va_list i;
-	char *j = NULL;
+	char *j = NULL, k;
 
 	if (format == NULL || (*format == '%' && *(format + 1) == '\0'))
 		return (-1);
@@ -17,11 +17,17 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%' && *(format + 1))
 		{
+			k = {'+', ' ', '#'};
 			*j = *(format + 1);
-			if (*j == '+' || *j == ' ' || *j == '#')
+			l = 0;
+			while (k[l])
 			{
-				m += handle_flags(j);
-				n = 1;
+				if (*j = k[l])
+				{
+					m += handle_flags(j);
+					format;
+				}
+				l++;
 			}
 			else if (*(format + 1) == 'c')
 				m += handle_c(va_arg(i, int));
