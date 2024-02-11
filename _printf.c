@@ -39,7 +39,7 @@ int _printf(const char *format, ...)
 				m += handle_s(va_arg(i, char *));
 			else if (*(format) == '%')
 				m += write(1, "%", 1);
-			else if (*(format) == 'i' || *(format + 1) == 'd')
+			else if (*(format) == 'i' || *(format) == 'd')
 				m += handle_id((long)va_arg(i, int));
 			else if (*(format) == 'b')
 				m += handle(va_arg(i, unsigned int), 2, 0);
