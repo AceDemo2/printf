@@ -8,6 +8,7 @@ int _printf(const char *format, ...)
 {
 	int m = 0, n = 0;
 	va_list i;
+	char *j;
 
 	if (format == NULL || (*format == '%' && *(format + 1) == '\0'))
 		return (-1);
@@ -16,8 +17,9 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%' && *(format + 1))
 		{
-			if (*(format + 1) == '+')
-				handle_flags();
+			j = *(format + 1);
+			if (j == '+' || j == ' ' || j == '#')
+				m += handle_flags(j);
 			else if (*(format + 1) == 'c')
 				m += handle_c(va_arg(i, int));
 			else if (*(format + 1) == 's')
