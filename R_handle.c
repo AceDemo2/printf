@@ -6,13 +6,13 @@ int handle_R(char *r)
         char a[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
         char b[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
         char *c;
+
         if (r == NULL)
             return -1;
-
         while (r[i])
             i++;
         c = malloc(sizeof(char) * i + 1);
-        if (r == NULL)
+        if (c == NULL)
             return (-1);
         i = 0;
         while (r[i])
