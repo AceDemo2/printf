@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 				if (*(format) == k[l])
 				{
 					j = va_arg(i, int);
-					o = 1
+					o = 1;
 					if (j > 0)
 					{
 						m += write(1, format, 1);
@@ -43,7 +43,7 @@ int _printf(const char *format, ...)
 				if (o == 1)
 					m += handle_c(j);
 				else
-					m += handle_c(v a_arg(i, int));
+					m += handle_c(va_arg(i, int));
 			}
 			else if (*(format) == 's')
 				m += handle_s(va_arg(i, char *));
