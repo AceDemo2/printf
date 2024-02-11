@@ -52,7 +52,7 @@ int _printf(const char *format, ...)
 			else if (*(format) == 'i' || *(format) == 'd')
 			{	
 	       			if (o == 1)
-                                        m += handle_id(j);
+                                        m += handle_id((long)j);
                                 else
                                         m += handle_id((long)va_arg(i, int));
 			}
