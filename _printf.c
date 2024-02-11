@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 		if (*format == '%' && *(format + 1))
 		{
 			format++;
-			k = {'+', ' ', '#'};
+			k = "+ #";
 			l = 0;
 			while (k[l])
 			{
