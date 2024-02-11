@@ -8,7 +8,7 @@ int _printf(const char *format, ...)
 {
 	int m = 0, n = 0;
 	va_list i;
-	char *j;
+	char *j = NULL;
 
 	if (format == NULL || (*format == '%' && *(format + 1) == '\0'))
 		return (-1);
