@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
 			l = 0;
 			while (k[l])
 			{
-				if (*(format) = k[l])
+				if (*(format) == k[l])
 				{
 					m += handle_flags(format);
 					l = 0;

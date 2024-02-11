@@ -1,5 +1,5 @@
 #include "main.h"
-int handle_flags(char *f)
+int handle_flags(const char *f)
 {
 	if (*f == '+')
 		write(1, "+", 1);
