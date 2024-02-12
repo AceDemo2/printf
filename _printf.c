@@ -47,11 +47,11 @@ int _printf(const char *format, ...)
 							format++;
 							p++;
 						}
-						if (format == 'o')
+						if (*format == 'o')
 							m += write(1, "0", 1);
 						else
 							m += write(1, "ox", 2);
-						format -= p;
+						format -= (p + 1);
 						l = 0;
 					}
 				}
