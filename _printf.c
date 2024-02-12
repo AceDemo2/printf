@@ -45,6 +45,7 @@ int _printf(const char *format, ...)
 							m += write(1, "0", 1);
 						else if (*(format + 1) == 'x' || (*(format + 1) == 'X'))
 							m += write(1, "ox", 2);
+						format++;
 						break;
 					}
 				}
