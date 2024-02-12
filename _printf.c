@@ -34,16 +34,18 @@ int _printf(const char *format, ...)
 							format++;
 							l = 0;
 						}
-						else while (*format != '\0')
+						else
 						{
-							format++;
+							while (*format != '\0')
+							{
+								format++;
+							}
+							if (*format == '\0')
+							{
+								va_end(i);
+								return (-1);
+							}
 						}
-						if (*format == '\0')
-						{
-							va_end(i);
-							return (-1);
-						}
-					}
 					else if (*format == '+' && j >= 0)
 					{
 						m += write(1, format, 1);
