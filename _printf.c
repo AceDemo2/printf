@@ -34,11 +34,6 @@ int _printf(const char *format, ...)
 							format++;
 							l = 0;
 						}
-						else if (j <= 0)
-						{
-							format++;
-							l = 0;
-						}
 						else
 						{
 							format++;
