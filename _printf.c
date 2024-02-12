@@ -39,6 +39,11 @@ int _printf(const char *format, ...)
 						l = 0;
 						n = 1;
 					}
+					else if (*format == '#')
+					{
+						format++;
+						break;
+					}
 					else
 					{
 						format++;
