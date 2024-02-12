@@ -39,17 +39,10 @@ int _printf(const char *format, ...)
 							format++;
 							l = 0;
 						}
-						else
+						else if (!j)
 						{
-							while (*format != '\0')
-							{
-								format++;
-							}
-							if (*format == '\0')
-							{
-								va_end(i);
-								return (-1);
-							}
+							format++;
+							l = 0;
 						}
 					}
 					else if (*format == '+' && j >= 0)
