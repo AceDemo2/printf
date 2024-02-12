@@ -81,16 +81,25 @@ int _printf(const char *format, ...)
 			else if (*(format) == 'o')
 			{
 				p = (*(format--) == '#') ? 3 : 0;
-				m += handle(va_arg(i, unsigned int), 8, p);
+				 if (o == 1)
+                                        m += handle((unsigned int)j, 8, p);
+				 else
+					m += handle(va_arg(i, unsigned int), 8, p);
 			}
 			else if (*(format) == 'X')
 			{
 				p = (*(format--) == '#') ? 2 : 0;
+				if (o == 1)
+                                        m += handle((unsigned int)j, 16, p);
+                                 else
 				m += handle(va_arg(i, unsigned int), 16, p);
 			}
 			else if (*(format) == 'x')
 			{
 				p = (*(format--) == '#') ? 2 : 0;
+				if (o == 1)
+                                        m += handle((unsigned int)j, 16, p);
+                                 else
 				m += handle(va_arg(i, unsigned int), 16, p);
 			}
 			else if (*(format) == 'S')
