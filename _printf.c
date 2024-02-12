@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 			format++;
 			k = "+ #";
 			l = 0;
-			while (k[l])
+			while (k[l] && *format)
 			{
 				if (*(format) == k[l])
 				{
@@ -125,6 +125,11 @@ int _printf(const char *format, ...)
 			{
 				format--;
 				m += write(1, format, 1);
+			}
+			if (*format == '\0')
+			{
+				va_end(i);
+				return (-1);
 			}
 			format++;
 			o = 0;
