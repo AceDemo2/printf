@@ -6,7 +6,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int m = 0, l = 0, j, o = 0, n = 0, p;
+	int m = 0, l = 0, j, o = 0, n = 0;
 	va_list i;
 	char *k;
 
