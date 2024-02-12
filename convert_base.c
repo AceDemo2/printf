@@ -39,6 +39,8 @@ int handle(unsigned long b, int c, int a)
 		}
 		if (a == 2)
 			m += write(1, "0x", 2);
+		if (a == 3)
+			m += write(1, "0", 1);
 		write(1, j, strlen(j));
 		free(j);
 		l = 0;

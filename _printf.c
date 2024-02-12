@@ -6,7 +6,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int m = 0, l = 0, j, o = 0, n = 0;
+	int m = 0, l = 0, j, o = 0, n = 0, p;
 	va_list i;
 	char *k;
 
@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 		if (*format == '%' && *(format + 1))
 		{
 			format++;
-			k = "+ #";
+			k = "+ ";
 			l = 0;
 			while (k[l])
 			{
@@ -38,15 +38,6 @@ int _printf(const char *format, ...)
 						format++;
 						l = 0;
 						n = 1;
-					}
-					else if (*format == '#')
-					{
-						if (*(format + 1) == 'o')
-							m += write(1, "0", 1);
-						else if (*(format + 1) == 'x' || (*(format + 1) == 'X'))
-							m += write(1, "0X", 2);
-						format++;
-						break;
 					}
 					else
 					{
@@ -83,11 +74,20 @@ int _printf(const char *format, ...)
 			else if (*(format) == 'u')
 				m += handle(va_arg(i, unsigned int), 10, 0);
 			else if (*(format) == 'o')
-				m += handle(va_arg(i, unsigned int), 8, 0);
+			{
+				p = (*(format--) == '#') ? 3 : 0;
+				m += handle(va_arg(i, unsigned int), 8, p);
+			}
 			else if (*(format) == 'X')
-				m += handle(va_arg(i, unsigned int), 16, 0);
+			{
+				p = (*(format--) == '#') ? 2 : 0;
+				m += handle(va_arg(i, unsigned int), 16, p);
+			}
 			else if (*(format) == 'x')
-				m += handle(va_arg(i, unsigned int), 16, 1);
+			{
+				p = (*(format--) == '#') ? 2 : 0;
+				m += handle(va_arg(i, unsigned int), 16, p);
+			}
 			else if (*(format) == 'S')
 				m += custom_specifier(va_arg(i, char *));
 			else if (*(format) == 'p')
