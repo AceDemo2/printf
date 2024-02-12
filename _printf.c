@@ -48,6 +48,8 @@ int _printf(const char *format, ...)
 						format++;
 						break;
 					}
+					else
+						format++;
 				}
 				else
 				{
