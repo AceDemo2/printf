@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 				{
 					j = (o == 1) ? j : va_arg(i, int);
 					o = 1;
-					if (format == ' ')
+					if (*format == ' ')
 					{
 						formart++;
 						l = 0;
