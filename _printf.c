@@ -6,7 +6,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int m = 0, l = 0, j, o = 0, n = 0;
+	int m = 0, l = 0, j, o = 0, n = 0, p;
 	va_list i;
 	char *k;
 
@@ -39,9 +39,19 @@ int _printf(const char *format, ...)
 						l = 0;
 						n = 1;
 					}
-					else
+					else if (*format == '#')
 					{
-						format++;
+						p = 0;
+						while (*format != 'o' || *format != 'x' || *format != 'X')
+						{
+							format++;
+							p++;
+						}
+						if (format == 'o')
+							m += write(1, "0", 1);
+						else
+							m += write(1, "ox", 2);
+						format -= p;
 						l = 0;
 					}
 				}
