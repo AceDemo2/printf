@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 				{
 					j = (o == 1) ? j : va_arg(i, int);
 					o = 1;
-					if (j > 0)
+					if (j >= 0)
 					{
 						m += write(1, format, 1);
 						format++;
