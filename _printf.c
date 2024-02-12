@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 			{
 				if (*(format) == k[l])
 				{
-					j = (n == 1) ? j : va_arg(i, int);
+					j = (o == 1) ? j : va_arg(i, int);
 					o = 1;
 					if (j > 0)
 					{
