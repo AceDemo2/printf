@@ -42,6 +42,7 @@ int _printf(const char *format, ...)
 					else if (*format == '#')
 					{
 						format++;
+						p = (*(format) == 'o') ? 3 : 2
 						break;
 					}
 					else
@@ -80,27 +81,24 @@ int _printf(const char *format, ...)
 				m += handle(va_arg(i, unsigned int), 10, 0);
 			else if (*(format) == 'o')
 			{
-				p = (*(format--) == '#') ? 3 : 0;
-				 if (o == 1)
-                                        m += handle((unsigned int)j, 8, p);
-				 else
-					m += handle(va_arg(i, unsigned int), 8, p);
+				if (o == 1)
+					m += handle((unsigned int)j, 8, p);
+				else
+					m += handle(va_arg(i, unsigned int), 8, 0);
 			}
 			else if (*(format) == 'X')
 			{
-				p = (*(format--) == '#') ? 2 : 0;
 				if (o == 1)
                                         m += handle((unsigned int)j, 16, p);
                                 else
-					m += handle(va_arg(i, unsigned int), 16, p);
+					m += handle(va_arg(i, unsigned int), 16, 0);
 			}
 			else if (*(format) == 'x')
 			{
-				p = (*(format--) == '#') ? 2 : 0;
 				if (o == 1)
                                         m += handle((unsigned int)j, 16, p);
                                 else
-					m += handle(va_arg(i, unsigned int), 16, p);
+					m += handle(va_arg(i, unsigned int), 16, 0);
 			}
 			else if (*(format) == 'S')
 				m += custom_specifier(va_arg(i, char *));
