@@ -42,7 +42,7 @@ int _printf(const char *format, ...)
 					else
 					{
 						format++;
-						l++;
+						l = 0;
 					}
 				}
 				else
