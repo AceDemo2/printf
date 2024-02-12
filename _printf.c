@@ -41,7 +41,6 @@ int _printf(const char *format, ...)
 						}
 						else if (*format)
 						{
-							m += write(1, format, 1);
 							format++;
 							l = 0;
 						}
@@ -130,7 +129,7 @@ int _printf(const char *format, ...)
 			if (*format == '\0')
 			{
 				va_end(i);
-				return (-1);
+				return (m);
 			}
 			format++;
 			o = 0;
