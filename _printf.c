@@ -42,7 +42,7 @@ int _printf(const char *format, ...)
 					else if (*format == '#')
 					{
 						p = 0;
-						while (*format != 'o' || *format != 'x' || *format != 'X')
+						/*while (*format != 'o' || *format != 'x' || *format != 'X')
 						{
 							format++;
 							p++;
@@ -50,7 +50,7 @@ int _printf(const char *format, ...)
 						if (*format == 'o')
 							m += write(1, "0", 1);
 						else
-							m += write(1, "ox", 2);
+							m += write(1, "ox", 2);*/
 						format -= (p + 1);
 						l = 0;
 					}
