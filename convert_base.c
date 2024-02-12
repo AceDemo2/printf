@@ -37,10 +37,12 @@ int handle(unsigned long b, int c, int a)
 			k /= c;
 			m++;
 		}
-		if (a == 2 || a == 4)
+		if (a == 2)
 			m += write(1, "0x", 2);
 		if (a == 3)
 			m += write(1, "0", 1);
+		if (a == 4)
+			m += write(1, "0X", 2);
 		write(1, j, strlen(j));
 		free(j);
 		l = 0;
