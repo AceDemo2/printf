@@ -40,6 +40,11 @@ int _printf(const char *format, ...)
 							format++;
 							l = 0;
 						}
+						else
+						{
+							format++;
+							l = 0;
+						}
 					}
 					else if (*format == '+')
 					{
@@ -51,6 +56,11 @@ int _printf(const char *format, ...)
 							n = 1;
 						}
 						else if (n == 1)
+						{
+							format++;
+							l = 0;
+						}
+						else
 						{
 							format++;
 							l = 0;
