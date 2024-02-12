@@ -46,6 +46,7 @@ int _printf(const char *format, ...)
 								return (-1);
 							}
 						}
+					}
 					else if (*format == '+' && j >= 0)
 					{
 						m += write(1, format, 1);
