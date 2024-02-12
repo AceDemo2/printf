@@ -39,7 +39,7 @@ int _printf(const char *format, ...)
 							format++;
 							l = 0;
 						}
-						else if (!j)
+						else
 						{
 							format++;
 							l = 0;
