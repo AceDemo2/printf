@@ -8,7 +8,7 @@ int _printf(const char *format, ...)
 {
 	int m = 0, l = 0, j, o = 0;
 	va_list i;
-	char *k, n;
+	char *k, *n;
 
 	if (format == NULL || (*format == '%' && *(format + 1) == '\0'))
 		return (-1);
@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 			format++;
 			k = "+ #";
 			l = 0;
-			n = (char)format;
+			n = format;
 			while (k[l])
 			{
 				if (*(format) == k[l])
