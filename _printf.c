@@ -6,7 +6,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int m = 0, l = 0, j, o = 0, n = 0, p;
+	int m = 0, l = 0, j, o = 0, n = 0;
 	va_list i;
 	char *k;
 
@@ -98,26 +98,11 @@ int _printf(const char *format, ...)
 			else if (*(format) == 'u')
 				m += handle(va_arg(i, unsigned int), 10, 0);
 			else if (*(format) == 'o')
-			{
-				if (o == 1)
-					m += handle((unsigned int)j, 8, p);
-				else
-					m += handle(va_arg(i, unsigned int), 8, 0);
-			}
+				m += handle(va_arg(i, unsigned int), 8, 0);
 			else if (*(format) == 'X')
-			{
-				if (o == 1)
-                                        m += handle((unsigned int)j, 16, p);
-                                else
-					m += handle(va_arg(i, unsigned int), 16, 0);
-			}
+				m += handle(va_arg(i, unsigned int), 16, 0);
 			else if (*(format) == 'x')
-			{
-				if (o == 1)
-                                        m += handle((unsigned int)j, 16, p);
-                                else
-					m += handle(va_arg(i, unsigned int), 16, 0);
-			}
+				m += handle(va_arg(i, unsigned int), 16, 1);
 			else if (*(format) == 'S')
 				m += custom_specifier(va_arg(i, char *));
 			else if (*(format) == 'p')
@@ -131,7 +116,6 @@ int _printf(const char *format, ...)
 				format--;
 				m += write(1, format, 1);
 			}
-			
 			format++;
 			o = 0;
 		}
