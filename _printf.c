@@ -85,6 +85,7 @@ int _printf(const char *format, ...)
 				m += write(1, format, 1);
 			}
 			format++;
+			o = 0;
 		}
 		else
 		{
