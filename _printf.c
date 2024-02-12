@@ -44,12 +44,15 @@ int _printf(const char *format, ...)
 						if (*(format + 1) == o)
 							m += write(1, "0", 1);
 						else if (*(format + 1) == 'x' || (*(format + 1) == 'X'))
-							m += write(1, "ox", 2);
+							m += write(1, "0X", 2);
 						format++;
 						break;
 					}
 					else
+					{
 						format++;
+						l = 0;
+					}
 				}
 				else
 				{
