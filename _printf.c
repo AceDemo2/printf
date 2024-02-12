@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 			format++;
 			k = "+ #";
 			l = 0;
-			n = format;
+			n = (char)format;
 			while (k[l])
 			{
 				if (*(format) == k[l])
