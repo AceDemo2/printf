@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 						format++;
 						l = 0;
 					}
-					else if (j >= 0)
+					else if (*format == '+' && j >= 0)
 					{
 						m += write(1, format, 1);
 						format++;
