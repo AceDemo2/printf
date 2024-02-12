@@ -6,7 +6,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int m = 0, l = 0, j, o = 0, n = 0, p;
+	int m = 0, l = 0, j, o = 0, n = 0, p, q;
 	va_list i;
 	char *k;
 
@@ -28,24 +28,33 @@ int _printf(const char *format, ...)
 					o = 1;
 					if (*format == ' ')
 					{
-						if (j >= 0 && n == 0)
+						if (j >= 0 && n == 0 && q == 0)
 						{
 							m += write(1, format, 1);
 							format++;
 							l = 0;
+							q = 1;
 						}
-						else
+						else if (q == 1)
 						{
 							format++;
 							l = 0;
 						}
 					}
-					else if (*format == '+' && j >= 0)
+					else if (*format == '+')
 					{
-						m += write(1, format, 1);
-						format++;
-						l = 0;
-						n = 1;
+						if (j >= 0 && n == 0)
+						{
+							m += write(1, format, 1);
+							format++;
+							l = 0;
+							n = 1;
+						}
+						else (n == 1)
+						{
+							format++;
+							l = 0;
+						}
 					}
 					else if (*format == '#')
 					{
@@ -53,18 +62,12 @@ int _printf(const char *format, ...)
 						p = (*(format) == 'o') ? 3 : (*(format) == 'X') ? 4 : 2;
 						break;
 					}
-					else
-					{
-						format++;
-						l = 0;
-					}
 				}
 				else
-				{
 					l++;
-				}
 			}
 			n = 0;
+			q = 0;
 			if (*format == '\0')
 			{
 				va_end(i);
