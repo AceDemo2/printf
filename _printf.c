@@ -70,6 +70,11 @@ int _printf(const char *format, ...)
 				}
 			}
 			n = 0;
+			if (*format == '\0')
+			{
+				va_end(i);
+				return (m);
+			}
 			if (*(format) == 'c')
 			{
 				if (o == 1)
@@ -126,11 +131,7 @@ int _printf(const char *format, ...)
 				format--;
 				m += write(1, format, 1);
 			}
-			if (*format == '\0')
-			{
-				va_end(i);
-				return (m);
-			}
+			
 			format++;
 			o = 0;
 		}
