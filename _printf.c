@@ -33,7 +33,10 @@ int _printf(const char *format, ...)
 						l = 0;
 					}
 					else
+					{
+						format++;
 						l++;
+					}
 				}
 				else
 				{
