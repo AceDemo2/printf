@@ -41,18 +41,11 @@ int _printf(const char *format, ...)
 					}
 					else if (*format == '#')
 					{
-						p = 0;
-						/*while (*format != 'o' || *format != 'x' || *format != 'X')
-						{
-							format++;
-							p++;
-						}
-						if (*format == 'o')
+						if (*(format + 1) == o)
 							m += write(1, "0", 1);
-						else
-							m += write(1, "ox", 2);*/
-						format -= (p + 1);
-						l = 0;
+						else if (*(format + 1) == x || (*(format + 1) == X))
+							m += write(1, "ox", 2);
+						break;
 					}
 				}
 				else
