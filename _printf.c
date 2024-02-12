@@ -28,6 +28,7 @@ int _printf(const char *format, ...)
 					o = 1;
 					if (*format == ' ')
 					{
+						m += write(1, format, 1);
 						format++;
 						l = 0;
 					}
