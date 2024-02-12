@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 					o = 1;
 					if (*format == ' ')
 					{
-						formart++;
+						format++;
 						l = 0;
 					}
 					else if (j >= 0)
