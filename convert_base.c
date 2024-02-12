@@ -33,11 +33,11 @@ int handle(unsigned long b, int c, int a)
 		{
 			l--;
 			n = (k % c);
-			j[l] = (a == 1 || a == 2) ? p[n] : (a == 3) ? o[n]: o[n];
+			j[l] = (a == 1 || a == 2) ? p[n] : (a == 4) ? o[n]: o[n];
 			k /= c;
 			m++;
 		}
-		if (a == 2 || a == 3)
+		if (a == 2 || a == 4)
 			m += write(1, "0x", 2);
 		if (a == 3)
 			m += write(1, "0", 1);

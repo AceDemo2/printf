@@ -42,7 +42,7 @@ int _printf(const char *format, ...)
 					else if (*format == '#')
 					{
 						format++;
-						p = (*(format) == 'o') ? 3 : 2;
+						p = (*(format) == 'o') ? 3 : (*(format) == 'X') ? 4 : 2;
 						break;
 					}
 					else
