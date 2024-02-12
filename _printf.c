@@ -41,7 +41,7 @@ int _printf(const char *format, ...)
 					}
 					else if (*format == '#')
 					{
-						if (*(format + 1) == o)
+						if (*(format + 1) == 'o')
 							m += write(1, "0", 1);
 						else if (*(format + 1) == 'x' || (*(format + 1) == 'X'))
 							m += write(1, "0X", 2);
