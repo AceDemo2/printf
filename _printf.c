@@ -43,7 +43,7 @@ int _printf(const char *format, ...)
 					{
 						if (*(format + 1) == o)
 							m += write(1, "0", 1);
-						else if (*(format + 1) == x || (*(format + 1) == X))
+						else if (*(format + 1) == 'x' || (*(format + 1) == 'X'))
 							m += write(1, "ox", 2);
 						break;
 					}
