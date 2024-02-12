@@ -6,7 +6,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int m = 0, l = 0, j, o = 0;
+	int m = 0, l = 0, j, o = 0, n = 0;
 	va_list i;
 	char *k;
 
@@ -26,11 +26,12 @@ int _printf(const char *format, ...)
 				{
 					j = (o == 1) ? j : va_arg(i, int);
 					o = 1;
-					if (*format == ' ' && j >= 0)
+					if (*format == ' ' && j >= 0 && n = 0)
 					{
 						m += write(1, format, 1);
 						format++;
 						l = 0;
+						n = 1;
 					}
 					else if (j >= 0)
 					{
@@ -49,6 +50,7 @@ int _printf(const char *format, ...)
 					l++;
 				}
 			}
+			n = 0;
 			if (*(format) == 'c')
 			{
 				if (o == 1)
