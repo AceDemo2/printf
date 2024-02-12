@@ -26,11 +26,23 @@ int _printf(const char *format, ...)
 				{
 					j = (o == 1) ? j : va_arg(i, int);
 					o = 1;
-					if (*format == ' ' && j >= 0 && n == 0)
+					if (*format == ' ')
 					{
-						m += write(1, format, 1);
-						format++;
-						l = 0;
+						if (j >= 0 && n == 0)
+						{
+							m += write(1, format, 1);
+							format++;
+							l = 0;
+						}
+						else while (format != '\0')
+						{
+							format++;
+						}
+						if (format == '\0')
+						{
+							va_end(i);
+							return (-1);
+						}
 					}
 					else if (*format == '+' && j >= 0)
 					{
