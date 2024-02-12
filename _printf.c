@@ -39,7 +39,7 @@ int _printf(const char *format, ...)
 							format++;
 							l = 0;
 						}
-						else
+						else (*format)
 						{
 							format++;
 							l = 0;
