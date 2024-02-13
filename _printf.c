@@ -144,6 +144,3 @@ int _printf(const char *format, ...)
         va_end(i);
         return (m);
 }
-~
-~
-
