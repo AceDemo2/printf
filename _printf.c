@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
                                         o = 1;
                                         if (*format == '+')
                                         {
-						if (j >= 0 && n == 0)
+						if (j && j >= 0 && n == 0)
                                                 {
                                                         m += write(1, format, 1);
                                                         format++;
@@ -43,13 +43,12 @@ int _printf(const char *format, ...)
                                                                                         }
                                         else if (*format == ' ')
                                         {
-                                         	if (j >= 0 && n == 0 && q == 0)
+                                         	if (j && j >= 0 && n == 0 && q == 0)
                                                 {
                                                         m += write(1, format, 1);
                                                         format++;
                                                         l = 0;
                                                         q = 1;
-                                                        continue;
                                                 }
                                                 else
                                                 {
