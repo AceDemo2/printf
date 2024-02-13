@@ -50,7 +50,7 @@ int _printf(const char *format, ...)
 							l = 0;
 							n = 1;
 						}
-						else if (n == 1)
+						else if (n == 1 || j <= 0)
 						{
 							format++;
 							l = 0;
