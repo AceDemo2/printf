@@ -34,6 +34,7 @@ int _printf(const char *format, ...)
 							format++;
 							l = 0;
 							q = 1;
+							continue;
 						}
 						else if (q == 1 || n == 1 || j <= 0 || *(format + 1))
 						{
