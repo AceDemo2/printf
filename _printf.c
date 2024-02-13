@@ -35,12 +35,7 @@ int _printf(const char *format, ...)
 							l = 0;
 							q = 1;
 						}
-						else if (q == 1)
-						{
-							format++;
-							l = 0;
-						}
-						else
+						else if (q == 1 || n == 1)
 						{
 							format++;
 							l = 0;
@@ -56,11 +51,6 @@ int _printf(const char *format, ...)
 							n = 1;
 						}
 						else if (n == 1)
-						{
-							format++;
-							l = 0;
-						}
-						else
 						{
 							format++;
 							l = 0;
