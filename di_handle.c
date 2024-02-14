@@ -1,5 +1,5 @@
 #include "main.h"
-int handle_id(va_list i, int lo, int hs int w)
+int handle_id(va_list i, int pl, int s, int lo, int hs int w)
 {
 	long j;
 	long l = 0, m = 0, n, o;
@@ -13,6 +13,7 @@ int handle_id(va_list i, int lo, int hs int w)
         {
                 j = (short)va_arg(i, int);
         }
+	m += (j >= 0 && pl) ? write(1, "+", 1) : (j >= 0 && s && !pl) ? write(1, " ", 1) : 0;
 					if (j < 0)
 					{
 						m += write(1, "-", 1);
