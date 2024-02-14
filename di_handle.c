@@ -18,7 +18,7 @@ int handle_id(va_list i, int pl, int s, int lo, int hs, int w)
 					{
 						m += write(1, "-", 1);
 						j = -j;
-						w--;;
+						w--;
 					}
 					if (j == 0)
 						l++;
