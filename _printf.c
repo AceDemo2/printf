@@ -1,4 +1,4 @@
-#include "main.h"
+nclude "main.h"
 /**
  * _printf - Custom printf function
  * @format: Format string
@@ -20,38 +20,38 @@ int _printf(const char *format, ...)
                         format++;
                         k = "+ #lh0123456789";
                         l = 0;
-			pl = 0;
-			s = 0;
-			h = 0;
-			lo = 0;
-			hs = 0;
-			w = 0;
+                        pl = 0;
+                        s = 0;
+                        h = 0;
+                        lo = 0;
+                        hs = 0;
+                        w = 0;
                         while (k[l] && *format)
                         {
                                 if (*(format) == k[l])
                                 {
                                         if (*format == '+')
-						pl = 1;
+                                                pl = 1;
                                         else if (*format == ' ')
                                                 s = 1;
                                         else if (*format == '#')
-						h = 1;
-					else if (*format == 'l')
-						lo = 1;
-					else if (*format == 'h')
-						hs = 1;
-					else if (*format >= '0' || *format <= '9')
+                                                h = 1;
+                                        else if (*format == 'l')
+                                                lo = 1;
+                                        else if (*format == 'h')
+                                                hs = 1;
+                                        else if (*format >= '0' || *format <= '9')
                                                 w = w * 10 + *format;
-					format++;
-					l = 0;
+                                        format++;
+                                        l = 0;
                                 }
                                 else
                                         l++;
                         }
-			if (h == 1)
-				p = (*(format) == 'o') ? 3 : (*(format) == 'X') ? 4 : 2;
-			else
-				p = (*(format) == 'o') ? 1 : 0;
+                        if (h == 1)
+                                p = (*(format) == 'o') ? 3 : (*(format) == 'X') ? 4 : 2;
+                        else
+                                p = (*(format) == 'o') ? 1 : 0;
                         if (*format == '\0')
                         {
                                 va_end(i);
@@ -70,19 +70,19 @@ int _printf(const char *format, ...)
                                 m += handle_id(i, pl, s, lo, hs, w);
                         }
                         else if (*(format) == 'b')
-                                m += handle(va_arg(i, unsigned int), 2, 0, lo, hs, w);
+                                m += handle(i, 2, 0, lo, hs, w);
                         else if (*(format) == 'u')
-                                m += handle(va_arg(i, unsigned int), 10, 0, lo, hs, w);
+                                m += handle(i, 10, 0, lo, hs, w);
                         else if (*(format) == 'o')
-                                m += handle(va_arg(i, unsigned int), 8, p, lo, hs, w);
+                                m += handle(i, 8, p, lo, hs, w);
                         else if (*(format) == 'X')
-                                m += handle(va_arg(i, unsigned int), 16, p, lo, hs, w);
+                                m += handle(i, 16, p, lo, hs, w);
                         else if (*(format) == 'x')
-                        	m += handle(va_arg(i, unsigned int), 16, p, lo, hs, w);
+                                m += handle(i, 16, p, lo, hs, w);
                         else if (*(format) == 'S')
                                 m += custom_specifier(va_arg(i, char *), w);
                         else if (*(format) == 'p')
-                                m += handle_p(i, w);
+                                m += handle((i, 16, 2, 0, 0, w);
                         else if (*(format) == 'r')
                                 m += handle_r(va_arg(i, char *), w);
                         else if (*(format) == 'R')
