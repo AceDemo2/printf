@@ -12,7 +12,7 @@ int handle_s(char *j, int w);
 int custom_specifier(char *c, int w);
 int handle(unsigned long b, int c, int a, int lo, int h, int w);
 void dbuff(int a, char *b);
-int handle_p(void * p, int w);
+int handle_p(va_list i, int w);
 int handle_r(char *r, int w);
 int handle_R(char *r, int w);
 int padding(int w, int l);
