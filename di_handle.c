@@ -3,7 +3,7 @@ int handle_id(unsigned int j, int lo, int h, int w)
 {
   int l = 0, m = 0, o, n;
 	char *k;
-	j = (lo) ? (long)j : (h) ? (short)j : j;
+	j = (lo) ? (unsigned long)j : (h) ? (unsigned short)j : j;
 					if (j < 0)
 					{
 						m += write(1, "-", 1);
