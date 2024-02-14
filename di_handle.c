@@ -1,5 +1,5 @@
 #include "main.h"
-int handle_id(va_list i, int pl, int s, int lo, int hs int w)
+int handle_id(va_list i, int pl, int s, int lo, int hs, int w)
 {
 	long j;
 	long l = 0, m = 0, n, o;
