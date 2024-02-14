@@ -13,7 +13,16 @@ int handle_id(va_list i, int pl, int s, int lo, int hs, int w)
         {
                 j = (short)va_arg(i, int);
         }
-	m += (j >= 0 && pl) ? write(1, "+", 1) : (j >= 0 && s && !pl) ? write(1, " ", 1) : 0;
+	if (j >= 0 && pl)
+	{
+		w--;
+		m += write(1, "+", 1);
+	}
+	if (j >= 0 && s && !pl)
+	{
+		w--;
+		m += write(1, " ", 1);
+	}
 					if (j < 0)
 					{
 						m += write(1, "-", 1);
@@ -31,7 +40,7 @@ int handle_id(va_list i, int pl, int s, int lo, int hs, int w)
 							l++;
 						}
 					}
-					k = malloc(sizeof(long) * l + 2);
+					k = malloc(sizeof(char) * l + 2);
 					if (k == NULL)
 					{
 						va_end(i);
