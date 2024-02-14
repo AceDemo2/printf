@@ -1,7 +1,7 @@
 #include "main.h"
 int handle_r(char *r, int w)
 {
-	int i = 0, j, l, m;
+	int i = 0, j, l, m = 0;
 	char *a, b;
 	
 	if (r == NULL)
@@ -21,7 +21,7 @@ int handle_r(char *r, int w)
 	}
 	if (w)
         	m += padding(w, j);
-	m = write(1, a, j);
+	m += write(1, a, j);
 	free(a);
 	return (m);
 }

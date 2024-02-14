@@ -37,8 +37,8 @@ int handle_R(char *r, int w)
                 i++;
         }
 	if (w)
-        	m += padding(w, i);
-        write(1, c, i);
+        	i += padding(w, i);
+        i += write(1, c, i);
         free(c);
         return (i);
 }
