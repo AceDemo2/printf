@@ -33,7 +33,7 @@ int _printf(const char *format, ...)
                                                 s = 1;
                                         else if (*format == '#')
 						h = 1;
-					format++:
+					format++;
 					l = 0;
                                 }
                                 else
@@ -55,7 +55,7 @@ int _printf(const char *format, ...)
                                 m += write(1, "%", 1);
                         else if (*(format) == 'i' || *(format) == 'd')
                         {
-				j = va_arg(i, int)
+				j = va_arg(i, int);
                                 m += (j >= 0 && pl) ? write(1, '+', 1) : (j >= 0 && s && !pl) ? write(1, ' ', 1) : 0;
                                 m += handle_id((long)j);
                         }
@@ -99,7 +99,6 @@ int _printf(const char *format, ...)
                         }
 
                         format++;
-                        o = 0;
                 }
                 else
                 {

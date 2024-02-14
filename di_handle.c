@@ -22,7 +22,6 @@ int handle_id(long j)
 					k = malloc(sizeof(char) * l + 1);
 					if (k == NULL)
 					{
-						va_end(i);
 						return (-1);
 					}
 					k[l] = '\0';
