@@ -33,7 +33,7 @@ int handle_id(long j, int lo, int h)
 						n--;
 						j /= 10;
 					}
-					(lo) ? (long)write(1, j, strlen(j)) : (h) ? (short)write(1, j, strlen(j)) : write    (1, j, strlen(j));
+					(lo) ? (long)write(1, k, strlen(k)) : (h) ? (short)write(1, k, strlen(k)) : write(1, k, strlen(k));
 					free(k);
   l = 0;
   return (m);
