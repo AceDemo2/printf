@@ -82,7 +82,7 @@ int _printf(const char *format, ...)
                         else if (*(format) == 'S')
                                 m += custom_specifier(va_arg(i, char *), w);
                         else if (*(format) == 'p')
-                                m += handle((i, 16, 2, 0, 0, w);
+                                m += handle(i, 16, 2, 0, 0, w);
                         else if (*(format) == 'r')
                                 m += handle_r(va_arg(i, char *), w);
                         else if (*(format) == 'R')
