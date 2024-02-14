@@ -8,12 +8,6 @@ int handle_id(va_list i, int pl, int s, int lo, int hs, int w)
 	if (lo == 1)
         {
                 j = va_arg(i, long);
-		if (j < 0)
-		{
-			m += write(1, "-", 1);
-			j = -j;
-			w--;
-		}
         }
         else if (hs == 1)
         {
@@ -32,6 +26,12 @@ int handle_id(va_list i, int pl, int s, int lo, int hs, int w)
 	{
 		w--;
 		m += write(1, " ", 1);
+	}
+	else if (j < 0)
+	{
+		m += write(1, "-", 1);
+		j = -j;
+		w--;
 	}
 	if (j == 0)
 		l++;
