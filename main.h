@@ -6,15 +6,15 @@
 #include <stdarg.h>
 #include <stdlib.h>
 int _printf(const char *format, ...);
-int handle_id(long j, int lo, int h);
-int handle_c(int c);
-int handle_s(char *j);
-int custom_specifier(char *c);
-int handle(unsigned long b, int c, int a, int lo, int h);
+int handle_id(long j, int lo, int h, int w);
+int handle_c(int c, int w);
+int handle_s(char *j, int w);
+int custom_specifier(char *c, int w);
+int handle(unsigned long b, int c, int a, int lo, int h, int w);
 void dbuff(int a, char *b);
-int handle_p(void * p);
-int handle_r(char *r);
-int handle_R(char *r);
+int handle_p(void * p, int w);
+int handle_r(char *r, int w);
+int handle_R(char *r, int w);
 int handle_flags(const char *f);
 
 #endif
