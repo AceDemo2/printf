@@ -1,5 +1,5 @@
 #include "main.h"
-int handle_id(long j, int lo, int hs, int w)
+int handle_id(long j)
 {
 	long l = 0, m = 0, n, o;
 	char *k;

@@ -67,9 +67,9 @@ int _printf(const char *format, ...)
                                 m += write(1, "%", 1);
                         else if (*(format) == 'i' || *(format) == 'd')
                         {
-				j = va_arg(i, long);
+				j = (lo = 1) ? va_arg(i, long): (hs == 1) ? va_arg(i, int) : va_arg(i, int);
                                 m += (j >= 0 && pl) ? write(1, "+", 1) : (j >= 0 && s && !pl) ? write(1, " ", 1) : 0;
-                                m += handle_id(j, lo, hs, w);
+                                m += handle_id(j);
                         }
                         else if (*(format) == 'b')
                                 m += handle(va_arg(i, unsigned int), 2, 0, lo, hs, w);
