@@ -18,17 +18,17 @@ int handle_id(va_list i, int pl, int s, int lo, int hs, int w)
 		w--;
 		m += write(1, "+", 1);
 	}
-	if (j >= 0 && s && !pl)
+	else if (j >= 0 && s && !pl)
 	{
 		w--;
 		m += write(1, " ", 1);
 	}
-					if (j < 0)
-					{
-						m += write(1, "-", 1);
-						j = -j;
-						w--;
-					}
+	else if (j < 0)
+	{
+		m += write(1, "-", 1);
+		j = -j;
+		w--;
+	}
 					if (j == 0)
 						l++;
 					else
