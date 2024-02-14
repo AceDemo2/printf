@@ -1,13 +1,14 @@
 #include "main.h"
 int handle_id(long j, int lo, int hs, int w)
 {
-	long int l = 0, m = 0, n, o;
+	long l = 0, m = 0, n, o;
 	char *k;
-	j = (lo) ? (long)j : (hs) ? (short)j : j;
+	j = (lo) ? j : (hs) ? (short)j : j;
 					if (j < 0)
 					{
 						m += write(1, "-", 1);
 						j = -j;
+						w--;;
 					}
 					if (j == 0)
 						l++;
