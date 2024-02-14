@@ -39,7 +39,7 @@ int _printf(const char *format, ...)
                                 else
                                         l++;
                         }
-			if (h = 1)
+			if (h == 1)
 				p = (*(format) == 'o') ? 3 : (*(format) == 'X') ? 4 : 2;
 			else
 				p = (*(format) == 'o') ? 1 : 0;
