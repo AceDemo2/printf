@@ -7,7 +7,6 @@
 int _printf(const char *format, ...)
 {
         int m = 0, l, pl, s, p, h, lo, hs, w;
-	void j;
         va_list i;
         char *k;
 

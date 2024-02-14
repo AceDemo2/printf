@@ -5,7 +5,7 @@ int handle_id(va_list i, int lo, int hs int w)
 	long l = 0, m = 0, n, o;
 	char *k;
         
-	if (lo = 1)
+	if (lo == 1)
         {
                 (long)j = va_arg(i, long);
         }
