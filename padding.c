@@ -1,7 +1,8 @@
 #include "main.h"
 int padding(int w, int l)
 {
-	int p;
+	int p, m;
+
         p = w - l;
         while (p > 0)
         {
