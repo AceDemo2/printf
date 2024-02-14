@@ -18,14 +18,14 @@ int _printf(const char *format, ...)
                 if (*format == '%' && *(format + 1))
                 {
                         format++;
-                        k = "+ #lh123456789";
+                        k = "+ #lh0123456789";
                         l = 0;
 			pl = 0;
 			s = 0;
 			h = 0;
 			lo = 0;
 			hs = 0;
-			w = 0
+			w = 0;
                         while (k[l] && *format)
                         {
                                 if (*(format) == k[l])
