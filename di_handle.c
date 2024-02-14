@@ -1,7 +1,7 @@
 #include "main.h"
 int handle_id(int j, int lo, int h, int w)
 {
-  long int l = 0, m = 0, o, n;
+  int l = 0, m = 0, o, n;
 	char *k;
 	j = (lo) ? (long)j : (h) ? (short)j : j;
 					if (j < 0)
@@ -20,7 +20,7 @@ int handle_id(int j, int lo, int h, int w)
 							l++;
 						}
 					}
-					k = malloc(sizeof(char) * l + 1);
+					k = malloc(l + 1);
 					if (k == NULL)
 					{
 						return (-1);
