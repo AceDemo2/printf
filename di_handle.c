@@ -1,7 +1,6 @@
 #include "main.h"
 int handle_id(long j)
 {
-	va_list i;
   long int l = 0, m = 0, o, n;
 	char *k;
 					if (j < 0)

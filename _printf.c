@@ -6,7 +6,7 @@
  */
 int _printf(const char *format, ...)
 {
-        int m = 0, l = 0, j, o = 0, n = 0, p, q = 0;
+        int m = 0, l = 0, j, pl= 0, s = 0, p, h = 0;
         va_list i;
         char *k;
 
@@ -20,55 +20,26 @@ int _printf(const char *format, ...)
                         format++;
                         k = "+ #";
                         l = 0;
+			pl = 0;
+			s = 0;
+			h = 0;
                         while (k[l] && *format)
                         {
                                 if (*(format) == k[l])
                                 {
-                                        j = (o == 1) ? j : va_arg(i, int);
-                                        o = 1;
                                         if (*format == '+')
-                                        {
-						if (j >= 0 && n == 0)
-                                                {
-                                                        m += write(1, format, 1);
-                                                        format++;
-                                                        l = 0;
-                                                        n = 1;
-                                                }
-                                                else
-                                                {
-                                                        format++;
-                                                        l = 0;
-                                                }
-                                                                                        }
+						pl = 1;
                                         else if (*format == ' ')
-                                        {
-                                         	if (j >= 0 && n == 0 && q == 0)
-                                                {
-                                                        m += write(1, format, 1);
-                                                        format++;
-                                                        l = 0;
-                                                        q = 1;
-                                                }
-                                                else
-                                                {
-                                                        format++;
-                                                        l = 0;
-                                                }
-       
-                                        }
+                                                s = 1;
                                         else if (*format == '#')
-                                        {
-                                                format++;
-                                                p = (*(format) == 'o') ? 3 : (*(format) == 'X') ? 4 : 2;
-                                                break;
-                                        }
+						h = 1;
+					format++:
+					l = 0;
                                 }
                                 else
                                         l++;
                         }
-                        n = 0;
-                        q = 0;
+			p = (*(format) == 'o') ? 3 : (*(format) == 'X') ? 4 : 2;
                         if (*format == '\0')
                         {
                                 va_end(i);
@@ -76,10 +47,7 @@ int _printf(const char *format, ...)
                         }
                         if (*(format) == 'c')
                         {
-                                if (o == 1)
-                                        m += handle_c(j);
-                                else
-                                        m += handle_c(va_arg(i, int));
+                                m += handle_c(va_arg(i, int));
                         }
                         else if (*(format) == 's')
                                 m += handle_s(va_arg(i, char *));
@@ -87,10 +55,9 @@ int _printf(const char *format, ...)
                                 m += write(1, "%", 1);
                         else if (*(format) == 'i' || *(format) == 'd')
                         {
-                                if (o == 1)
-                                        m += handle_id((long)j);
-                                else
-                                        m += handle_id((long)va_arg(i, int));
+				j = va_arg(i, int)
+                                m += (j >= 0 && pl) ? write(1, '+', 1) : (j >= 0 && s && !pl) ? write(1, ' ', 1) : 0;
+                                m += handle_id((long)j);
                         }
                         else if (*(format) == 'b')
                                 m += handle(va_arg(i, unsigned int), 2, 0);
@@ -98,21 +65,21 @@ int _printf(const char *format, ...)
                                 m += handle(va_arg(i, unsigned int), 10, 0);
                         else if (*(format) == 'o')
                         {
-                                if (o == 1)
+                                if (h == 1)
                                         m += handle((unsigned int)j, 8, p);
                                 else
                                         m += handle(va_arg(i, unsigned int), 8, 0);
                         }
                         else if (*(format) == 'X')
                         {
-                                if (o == 1)
+                                if (h == 1)
                                         m += handle((unsigned int)j, 16, p);
                                 else
                                         m += handle(va_arg(i, unsigned int), 16, 0);
                         }
                         else if (*(format) == 'x')
                         {
-                                if (o == 1)
+                                if (h == 1)
                                         m += handle((unsigned int)j, 16, p);
                                 else
                                         m += handle(va_arg(i, unsigned int), 16, 0);
