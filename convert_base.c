@@ -3,11 +3,11 @@ int handle(va_list i, int c, int a, int lo, int hs, int w)
 {
 
 	unsigned long l = 0, k, m = 0, n, b;
-	void *c;
+	void *d;
 	char *j, *o = "0123456789ABCDEF", *p = "0123456789abcdef";
 	if (a == 2)
 	{
-		c = va_arg(i, void *);
+		d = va_arg(i, void *);
 		if (c == NULL)
 		{
 			m += write(1, "(nil)", 5);
@@ -15,7 +15,7 @@ int handle(va_list i, int c, int a, int lo, int hs, int w)
 			return (m);
 		}
 		else
-			b = (unsigned long)c;
+			b = (unsigned long)d;
 	}
 	else 
 	{
