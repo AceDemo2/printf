@@ -8,7 +8,7 @@ int handle(va_list i, int c, int a, int lo, int hs, int w)
 	if (a == 2)
 	{
 		d = va_arg(i, void *);
-		if (c == NULL)
+		if (d == NULL)
 		{
 			m += write(1, "(nil)", 5);
 			va_end(i);
