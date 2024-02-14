@@ -6,7 +6,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 int _printf(const char *format, ...);
-int handle_id(va_list i, int lo, int hs int w);
+int handle_id(va_list i, int lo, int hs, int w);
 int handle_c(int c, int w);
 int handle_s(char *j, int w);
 int custom_specifier(char *c, int w);
