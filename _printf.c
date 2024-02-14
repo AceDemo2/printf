@@ -6,7 +6,7 @@
  */
 int _printf(const char *format, ...)
 {
-        int m = 0, l = 0, j, pl= 0, s = 0, p, h = 0, lo, h;
+        int m = 0, l = 0, j, pl= 0, s = 0, p, h = 0, lo, hs;
         va_list i;
         char *k;
 
@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 			s = 0;
 			h = 0;
 			lo = 0;
-			h = 0;
+			hs = 0;
                         while (k[l] && *format)
                         {
                                 if (*(format) == k[l])
@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
 					else if (*format == 'l')
 						lo = 1;
 					else if (*format == 'h')
-						h = 1;
+						hs = 1;
 					format++;
 					l = 0;
                                 }
@@ -69,15 +69,15 @@ int _printf(const char *format, ...)
                                 m += handle_id((long)j, lo, h);
                         }
                         else if (*(format) == 'b')
-                                m += handle(va_arg(i, unsigned int), 2, 0);
+                                m += handle(va_arg(i, unsigned int), 2, 0, lo, hs);
                         else if (*(format) == 'u')
-                                m += handle(va_arg(i, unsigned int), 10, 0, lo, h);
+                                m += handle(va_arg(i, unsigned int), 10, 0, lo, hs);
                         else if (*(format) == 'o')
-                                m += handle(va_arg(i, unsigned int), 8, p, lo, h);
+                                m += handle(va_arg(i, unsigned int), 8, p, lo, hs);
                         else if (*(format) == 'X')
-                                m += handle(va_arg(i, unsigned int), 16, p, lo, h);
+                                m += handle(va_arg(i, unsigned int), 16, p, lo, hs);
                         else if (*(format) == 'x')
-                        	m += handle(va_arg(i, unsigned int), 16, p, lo, h);
+                        	m += handle(va_arg(i, unsigned int), 16, p, lo, hs);
                         else if (*(format) == 'S')
                                 m += custom_specifier(va_arg(i, char *));
                         else if (*(format) == 'p')
