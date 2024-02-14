@@ -1,5 +1,5 @@
 #include "main.h"
-int handle_id(int j, int lo, int h, int w)
+int handle_id(unsigned int j, int lo, int h, int w)
 {
   int l = 0, m = 0, o, n;
 	char *k;
@@ -20,7 +20,7 @@ int handle_id(int j, int lo, int h, int w)
 							l++;
 						}
 					}
-					k = malloc(l + 3);
+					k = malloc(l + 1);
 					if (k == NULL)
 					{
 						return (-1);
