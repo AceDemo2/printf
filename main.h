@@ -15,6 +15,8 @@ void dbuff(int a, char *b);
 int handle_p(void * p, int w);
 int handle_r(char *r, int w);
 int handle_R(char *r, int w);
+int padding(int w, int l)
+
 int handle_flags(const char *f);
 
 #endif
