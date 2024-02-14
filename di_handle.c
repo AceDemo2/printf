@@ -20,7 +20,7 @@ int handle_id(long j, int lo, int h, int w)
 							l++;
 						}
 					}
-					k = malloc(sizeof(char) + 1);
+					k = malloc(sizeof(char) * l + 1 );
 					if (k == NULL)
 					{
 						return (-1);
