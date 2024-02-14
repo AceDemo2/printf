@@ -7,7 +7,7 @@ int handle(va_list i, int c, int a, int lo, int hs, int w)
 	if (lo == 1)
 		b = va_arg(i, unsigned long);
 	if (hs == 1)
-		b = va_arg(i, unsigned short);
+		b = (short)va_arg(i, int);
 	k = b;
 	if (b == 0)
 	{
