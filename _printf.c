@@ -6,7 +6,7 @@
  */
 int _printf(const char *format, ...)
 {
-        int m = 0, l = 0, j, pl= 0, s = 0, p, h = 0, lo, hs;
+        int m = 0, l, j, pl, s, p, h, lo, hs, w;
         va_list i;
         char *k;
 
@@ -18,13 +18,14 @@ int _printf(const char *format, ...)
                 if (*format == '%' && *(format + 1))
                 {
                         format++;
-                        k = "+ #lh";
+                        k = "+ #lh123456789";
                         l = 0;
 			pl = 0;
 			s = 0;
 			h = 0;
 			lo = 0;
 			hs = 0;
+			w = 0
                         while (k[l] && *format)
                         {
                                 if (*(format) == k[l])
@@ -39,6 +40,8 @@ int _printf(const char *format, ...)
 						lo = 1;
 					else if (*format == 'h')
 						hs = 1;
+					else if (*format >= '0' || *format <= '9')
+                                                w = w * 10 + *format;
 					format++;
 					l = 0;
                                 }
@@ -56,36 +59,36 @@ int _printf(const char *format, ...)
                         }
                         if (*(format) == 'c')
                         {
-                                m += handle_c(va_arg(i, int));
+                                m += handle_c(va_arg(i, int), w);
                         }
                         else if (*(format) == 's')
-                                m += handle_s(va_arg(i, char *));
+                                m += handle_s(va_arg(i, char *), w);
                         else if (*(format) == '%')
                                 m += write(1, "%", 1);
                         else if (*(format) == 'i' || *(format) == 'd')
                         {
 				j = va_arg(i, int);
                                 m += (j >= 0 && pl) ? write(1, "+", 1) : (j >= 0 && s && !pl) ? write(1, " ", 1) : 0;
-                                m += handle_id((long)j, lo, h);
+                                m += handle_id((long)j, lo, h, w);
                         }
                         else if (*(format) == 'b')
-                                m += handle(va_arg(i, unsigned int), 2, 0, lo, hs);
+                                m += handle(va_arg(i, unsigned int), 2, 0, lo, hs, w);
                         else if (*(format) == 'u')
-                                m += handle(va_arg(i, unsigned int), 10, 0, lo, hs);
+                                m += handle(va_arg(i, unsigned int), 10, 0, lo, hs, w);
                         else if (*(format) == 'o')
-                                m += handle(va_arg(i, unsigned int), 8, p, lo, hs);
+                                m += handle(va_arg(i, unsigned int), 8, p, lo, hs, w);
                         else if (*(format) == 'X')
-                                m += handle(va_arg(i, unsigned int), 16, p, lo, hs);
+                                m += handle(va_arg(i, unsigned int), 16, p, lo, hs, w);
                         else if (*(format) == 'x')
-                        	m += handle(va_arg(i, unsigned int), 16, p, lo, hs);
+                        	m += handle(va_arg(i, unsigned int), 16, p, lo, hs, w);
                         else if (*(format) == 'S')
-                                m += custom_specifier(va_arg(i, char *));
+                                m += custom_specifier(va_arg(i, char *), w);
                         else if (*(format) == 'p')
-                                m += handle_p(va_arg(i, void *));
+                                m += handle_p(va_arg(i, void *), w);
                         else if (*(format) == 'r')
-                                m += handle_r(va_arg(i, char *));
+                                m += handle_r(va_arg(i, char *), w);
                         else if (*(format) == 'R')
-                                m += handle_R(va_arg(i, char *));
+                                m += handle_R(va_arg(i, char *), w);
                         else
                         {
                                 format--;

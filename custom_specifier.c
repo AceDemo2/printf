@@ -1,5 +1,5 @@
 #include "main.h"
-int custom_specifier(char *c)
+int custom_specifier(char *c, int w)
 {
 	int m = 0, i = 0, j = 0, k = 0, l = 0;
 	char *d;
@@ -32,6 +32,8 @@ int custom_specifier(char *c)
 		}
 		i++;
 	}
+	if (w)
+                m += padding(w, strlen(d));
 	m += write(1, d, strlen(d));
 	free(d);
 	return (m);

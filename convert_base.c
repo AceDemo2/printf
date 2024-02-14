@@ -1,5 +1,5 @@
 #include "main.h"
-int handle(unsigned long b, int c, int a, int lo, int h)
+int handle(unsigned long b, int c, int a, int lo, int h, int w)
 {
 	unsigned long l = 0, k, m = 0, n;
 	char *j, *o = "0123456789ABCDEF", *p = "0123456789abcdef";
@@ -39,11 +39,23 @@ int handle(unsigned long b, int c, int a, int lo, int h)
 			m++;
 		}
 		if (a == 2)
+		{
+			if (w)
+				m += padding(w, 2 + strlen(j));
 			m += write(1, "0x", 2);
+		}
 		if (a == 3)
+		{
+			if (w)
+                                m += padding(w, 1 + strlen(j));
 			m += write(1, "0", 1);
+		}
 		if (a == 4)
+		{
+			if (w)
+                                m += padding(w, 2 + strlen(j));
 			m += write(1, "0X", 2);
+		}
 		write(1, j, strlen(j));
 		free(j);
 		l = 0;

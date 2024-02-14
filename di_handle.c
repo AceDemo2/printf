@@ -1,5 +1,5 @@
 #include "main.h"
-int handle_id(long j, int lo, int h)
+int handle_id(long j, int lo, int h, int w)
 {
   long int l = 0, m = 0, o, n;
 	char *k;
@@ -34,6 +34,8 @@ int handle_id(long j, int lo, int h)
 						n--;
 						j /= 10;
 					}
+					if (w)
+                                		m += padding(w, strlen(k));
 					write(1, k, strlen(k));
 					free(k);
   l = 0;

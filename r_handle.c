@@ -1,5 +1,5 @@
 #include "main.h"
-int handle_r(char *r)
+int handle_r(char *r, int w)
 {
 	int i = 0, j, l, m;
 	char *a, b;
@@ -19,6 +19,8 @@ int handle_r(char *r)
 		i++;
 		l--;
 	}
+	if (w)
+        	m += padding(w, j);
 	m = write(1, a, j);
 	free(a);
 	return (m);
