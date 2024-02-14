@@ -42,7 +42,7 @@ int _printf(const char *format, ...)
 			if (h = 1)
 				p = (*(format) == 'o') ? 3 : (*(format) == 'X') ? 4 : 2;
 			else
-				p = (*(format) == 'o') ? 1 : 0
+				p = (*(format) == 'o') ? 1 : 0;
                         if (*format == '\0')
                         {
                                 va_end(i);
