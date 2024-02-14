@@ -3,6 +3,7 @@ int handle_id(long j, int lo, int h)
 {
   long int l = 0, m = 0, o, n;
 	char *k;
+	j = (lo) ? (long)j : (h) ? (short)j : j;
 					if (j < 0)
 					{
 						m += write(1, "-", 1);
@@ -33,7 +34,7 @@ int handle_id(long j, int lo, int h)
 						n--;
 						j /= 10;
 					}
-					(lo) ? (long)write(1, k, strlen(k)) : (h) ? (short)write(1, k, strlen(k)) : write(1, k, strlen(k));
+					write(1, k, strlen(k));
 					free(k);
   l = 0;
   return (m);
