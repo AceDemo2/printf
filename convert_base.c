@@ -1,10 +1,14 @@
 #include "main.h"
-int handle(unsigned long b, int c, int a, int lo, int h, int w)
+int handle(va_list i, int c, int a, int lo, int hs, int w)
 {
-	unsigned long l = 0, k, m = 0, n;
+
+	unsigned long l = 0, k, m = 0, n, b;
 	char *j, *o = "0123456789ABCDEF", *p = "0123456789abcdef";
+	if (lo == 1)
+		b = va_arg(i, unsigned long);
+	if (hs == 1)
+		b = va_arg(i, unsigned short);
 	k = b;
-	b = (lo) ? (unsigned long)b : (h) ? (unsigned short)b : b;
 	if (b == 0)
 	{
 		write(1, "0", 1);
@@ -21,13 +25,19 @@ int handle(unsigned long b, int c, int a, int lo, int h, int w)
 		{
 			j = malloc(sizeof(unsigned long) * l + 2);
                 	if (j == NULL)
+			{
+				va_end(i);
                         	return(-1);
+			}
 		}
 		else
 		{
 			j = malloc(sizeof(unsigned int) * l + 2);
 			if (j == NULL)
+			{
+				va_end(i);
 				return(-1);
+			}
 		}
 		j[l] = '\0';
 		while(l > 0)
