@@ -59,7 +59,7 @@ int handle_id(va_list i, int pl, int s, int lo, int hs, int w)
 						n--;
 						j /= 10;
 					}
-					if (w)
+					if (w > l)
                                 		m += padding(w, strlen(k));
 					write(1, k, strlen(k));
 					free(k);
