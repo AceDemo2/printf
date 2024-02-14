@@ -1,15 +1,15 @@
 #include "main.h"
-int handle_id(unsigned int j, int lo, int h, int w)
+int handle_id(int j, int lo, int h, int w)
 {
-  int l = 0, m = 0, o, n;
+ unsigned int l = 0, m = 0, o, n;
 	char *k;
-	j = (lo) ? (unsigned long)j : (h) ? (unsigned short)j : j;
+	j = (lo) ? (long)j : (h) ? (short)j : j;
 					if (j < 0)
 					{
 						m += write(1, "-", 1);
 						j = -j;
 					}
-					if (j == 0)
+					else if (j == 0)
 						l++;
 					else
 					{
