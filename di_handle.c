@@ -1,21 +1,18 @@
 #include "main.h"
 int handle_id(va_list i, int lo, int hs int w)
 {
-	void j;
+	long j;
 	long l = 0, m = 0, n, o;
 	char *k;
         
 	if (lo == 1)
         {
-                (long)j = va_arg(i, long);
+                j = va_arg(i, long);
         }
         else if (hs == 1)
         {
-                (short)j = va_arg(i, int);
+                j = (short)va_arg(i, int);
         }
-        else
-                j = (long)j;
-
 					if (j < 0)
 					{
 						m += write(1, "-", 1);
