@@ -6,7 +6,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 int _printf(const char *format, ...);
-int handle_id(int j, int lo, int h, int w);
+int handle_id(long j, int lo, int h, int w);
 int handle_c(int c, int w);
 int handle_s(char *j, int w);
 int custom_specifier(char *c, int w);
