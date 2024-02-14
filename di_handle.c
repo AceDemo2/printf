@@ -1,9 +1,9 @@
 #include "main.h"
-int handle_id(long j, int lo, int h, int w)
+int handle_id(long j, int lo, int hs, int w)
 {
 	long int l = 0, m = 0, n, o;
 	char *k;
-	j = (lo) ? (long)j : (h) ? (short)j : j;
+	j = (lo) ? (long long)j : (hs) ? (short)j : j;
 					if (j < 0)
 					{
 						m += write(1, "-", 1);
