@@ -4,7 +4,7 @@ int handle(unsigned long b, int c, int a, int lo, int h)
 	unsigned long l = 0, k, m = 0, n;
 	char *j, *o = "0123456789ABCDEF", *p = "0123456789abcdef";
 	k = b;
-	b = (lo) ? (long)b : (h) ? (short)b : b;
+	b = (lo) ? (unsigned long)b : (h) ? (unsigned short)b : b;
 	if (b == 0)
 	{
 		write(1, "0", 1);
