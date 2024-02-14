@@ -39,7 +39,10 @@ int _printf(const char *format, ...)
                                 else
                                         l++;
                         }
-			p = (*(format) == 'o') ? 3 : (*(format) == 'X') ? 4 : 2;
+			if (h = 1)
+				p = (*(format) == 'o') ? 3 : (*(format) == 'X') ? 4 : 2;
+			else
+				p = (*(format) == 'o') ? 1 : 0
                         if (*format == '\0')
                         {
                                 va_end(i);
@@ -64,26 +67,11 @@ int _printf(const char *format, ...)
                         else if (*(format) == 'u')
                                 m += handle(va_arg(i, unsigned int), 10, 0);
                         else if (*(format) == 'o')
-                        {
-                                if (h == 1)
-                                        m += handle((unsigned int)j, 8, p);
-                                else
-                                        m += handle(va_arg(i, unsigned int), 8, 0);
-                        }
+                                m += handle(va_arg(i, unsigned int), 8, p);
                         else if (*(format) == 'X')
-                        {
-                                if (h == 1)
-                                        m += handle((unsigned int)j, 16, p);
-                                else
-                                        m += handle(va_arg(i, unsigned int), 16, 0);
-                        }
+                                m += handle(va_arg(i, unsigned int), 16, p);
                         else if (*(format) == 'x')
-                        {
-                                if (h == 1)
-                                        m += handle((unsigned int)j, 16, p);
-                                else
-                                        m += handle(va_arg(i, unsigned int), 16, 0);
-                        }
+                        	m += handle(va_arg(i, unsigned int), 16, p);
                         else if (*(format) == 'S')
                                 m += custom_specifier(va_arg(i, char *));
                         else if (*(format) == 'p')
