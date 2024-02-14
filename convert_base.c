@@ -10,8 +10,6 @@ int handle(va_list i, int c, int a, int lo, int hs, int w)
 		b = (short)va_arg(i, int);
 	else
 		b = va_arg(i, unsigned long);
-	if (b == NULL)
-		m += write(1, "(nil)", 5)
 	k = b;
 	if (b == 0)
 	{
