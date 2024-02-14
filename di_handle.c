@@ -44,7 +44,7 @@ int handle_id(va_list i, int pl, int s, int lo, int hs, int w)
 			l++;
 		}
 	}
-	k = malloc(sizeof(unsigned int ) * l + 2);
+	k = malloc(sizeof(unsigned long) * l + 2);
 	if (k == NULL)
 	{
 		va_end(i);
