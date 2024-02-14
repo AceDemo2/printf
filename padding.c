@@ -6,7 +6,7 @@ int padding(int w, int l)
         p = w - l;
         while (p > 0)
         {
-        	m += write(1, ' ', 1);
+        	m += write(1, " ", 1);
               	p--;
 	}
 	return (m);
