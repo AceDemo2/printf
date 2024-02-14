@@ -1,7 +1,7 @@
 #include "main.h"
 int handle_id(int j, int lo, int h, int w)
 {
- unsigned int o; 
+ long int o; 
 	 int l = 0, m = 0, n;
 	char *k;
 	j = (lo) ? (long)j : (h) ? (short)j : j;
