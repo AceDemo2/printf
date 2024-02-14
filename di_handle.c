@@ -1,5 +1,5 @@
 #include "main.h"
-int handle_id(long j)
+int handle_id(long j, int lo, int h)
 {
   long int l = 0, m = 0, o, n;
 	char *k;
@@ -33,7 +33,7 @@ int handle_id(long j)
 						n--;
 						j /= 10;
 					}
-					write(1, k, strlen(k));
+					(lo) ? (long)write(1, j, strlen(j)) : (h) ? (short)write(1, j, strlen(j)) : write    (1, j, strlen(j));
 					free(k);
   l = 0;
   return (m);
