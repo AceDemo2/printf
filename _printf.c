@@ -96,6 +96,7 @@ int _printf(const char *format, ...)
                         else
                         {
                                 format = format - rd;
+                                format--;
                                 m += write(1, format, 1);
                         }
                         format++;
