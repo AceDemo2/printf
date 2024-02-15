@@ -33,15 +33,15 @@ int _printf(const char *format, ...)
                                 if (*(format) == k[l])
                                 {
                                         if (*format == '+')
-                                                pl += 1;
+                                                pl++;
                                         else if (*format == ' ')
-                                                s += 1;
+                                                s++;
                                         else if (*format == '#')
-                                                h += 1;
+                                                h++;
                                         else if (*format == 'l')
-                                                lo += 1;
+                                                lo++;
                                         else if (*format == 'h')
-                                                hs += 1;
+                                                hs++;
                                         else if (*format >= '0' || *format <= '9')
                                         {
                                                 w = w * 10 + *format;
@@ -95,6 +95,7 @@ int _printf(const char *format, ...)
                                 m += handle_R(va_arg(i, char *), w);
                         else
                         {
+                                rd = 2;
                                 format = format - rd;
                                 m += write(1, format, 1);
                         }
