@@ -19,9 +19,9 @@ int handle(va_list i, int c, int a, int lo, int hs, int w)
 	}
 	else 
 	{
-		if (lo == 1)
+		if (lo)
 			b = va_arg(i, unsigned long);
-		else if (hs == 1)
+		else if (hs)
 			b = (short)va_arg(i, int);
 		else
 			b = va_arg(i, unsigned long);
