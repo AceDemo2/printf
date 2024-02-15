@@ -6,7 +6,7 @@
  */
 int _printf(const char *format, ...)
 {
-        int m = 0, l, pl, s, p, h, lo, hs, w;
+        int m = 0, l, pl, s, p, h, lo, hs, w, w1, rd;
         va_list i;
         char *k;
 
@@ -26,32 +26,38 @@ int _printf(const char *format, ...)
                         lo = 0;
                         hs = 0;
                         w = 0;
+                        w1 = 0;
+                        rd = 0;
                         while (k[l] && *format)
                         {
                                 if (*(format) == k[l])
                                 {
                                         if (*format == '+')
-                                                pl = 1;
+                                                pl += 1;
                                         else if (*format == ' ')
-                                                s = 1;
+                                                s += 1;
                                         else if (*format == '#')
-                                                h = 1;
+                                                h += 1;
                                         else if (*format == 'l')
-                                                lo = 1;
+                                                lo += 1;
                                         else if (*format == 'h')
-                                                hs = 1;
+                                                hs += 1;
                                         else if (*format >= '0' || *format <= '9')
+                                        {
                                                 w = w * 10 + *format;
+                                                w1++;
+                                        }
                                         format++;
                                         l = 0;
                                 }
                                 else
                                         l++;
                         }
-                        if (h == 1)
+                        if (h)
                                 p = (*(format) == 'o') ? 3 : (*(format) == 'X') ? 4 : 2;
                         else
                                 p = (*(format) == 'o') ? 1 : 0;
+                        rd = pl + s + h + lo + hs + w1;
                         if (*format == '\0')
                         {
                                 va_end(i);
@@ -89,8 +95,9 @@ int _printf(const char *format, ...)
                                 m += handle_R(va_arg(i, char *), w);
                         else
                         {
-                                format--;
+                                format -= rd;
                                 m += write(1, format, 1);
+                                format += rd;
                         }
 
                         format++;
