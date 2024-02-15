@@ -95,7 +95,6 @@ int _printf(const char *format, ...)
                                 m += handle_R(va_arg(i, char *), w);
                         else
                         {
-                                rd = 2;
                                 format = format - rd;
                                 m += write(1, format, 1);
                         }
