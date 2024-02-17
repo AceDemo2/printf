@@ -57,7 +57,7 @@ int _printf(const char *format, ...)
                                 p = (*(format) == 'o') ? 3 : (*(format) == 'X') ? 4 : 2;
                         else
                                 p = (*(format) == 'o') ? 1 : 0;
-                        rd = pl + s + h + lo + hs + w1 + 1;
+                        rd = pl + s + h + lo + hs + w1;
                         if (*format == '\0')
                         {
                                 va_end(i);
@@ -96,7 +96,7 @@ int _printf(const char *format, ...)
                         else
                         {
 
-                                format -= rd;
+                                format -= rd - 1;
                                 m += write(1, format, 1);
                         }
                         format++;
