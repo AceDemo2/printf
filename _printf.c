@@ -26,8 +26,8 @@ int _printf(const char *format, ...)
                         lo = 0;
                         hs = 0;
                         w = 0;
-                        w1 = 0;
-                        rd = 0;
+                        /*w1 = 0;
+                        rd = 0;*/
                         while (k[l] && *format)
                         {
                                 if (*(format) == k[l])
