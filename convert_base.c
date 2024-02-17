@@ -1,11 +1,11 @@
 #include "main.h"
-int handle(va_list i, int c, int a, int lo, int hs, int w)
+int handle(va_list i, int b, int f, int lo, int hs, int w)
 {
 
         unsigned long l = 0, k, m = 0, n, b;
         void *d;
         char *j, *o = "0123456789ABCDEF", *p = "0123456789abcdef";
-        if (a == 2)
+        if (f == "p")
         {
                 d = va_arg(i, void *);
                 if (d == NULL)
@@ -39,7 +39,7 @@ int handle(va_list i, int c, int a, int lo, int hs, int w)
                         b /= c;
                         l++;
                 }
-                if (a == 2)
+                if (p == 2)
                 {
                         j = malloc(sizeof(unsigned long) * l + 2);
                         if (j == NULL)
@@ -62,23 +62,23 @@ int handle(va_list i, int c, int a, int lo, int hs, int w)
                 {
                         l--;
                         n = (k % c);
-                        j[l] = (a == 1 || a == 2) ? p[n] : (a == 4) ? o[n]: o[n];
+                        j[l] = (f == "X" || f == "X1") ? o[n]: p[n];
                         k /= c;
                         m++;
                 }
-                if (a == 2)
+                if (f == "p" || f == "x1")
                 {
                         if (w)
                                 m += padding(w, 2 + strlen(j));
                         m += write(1, "0x", 2);
                 }
-                if (a == 3)
+                if (a == "o1")
                 {
                         if (w)
                                 m += padding(w, 1 + strlen(j));
                         m += write(1, "0", 1);
                 }
-                if (a == 4)
+                if (a == "X1")
                 {
                         if (w)
                                 m += padding(w, 2 + strlen(j));
