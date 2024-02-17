@@ -44,7 +44,7 @@ int _printf(const char *format, ...)
                                                 hs++;
                                         else if (*format >= '0' || *format <= '9')
                                         {
-                                                w = w * 10 + *format;
+                                                w = w * 10 + (*format - '0');
                                                 w1++;
                                         }
                                         format++;
