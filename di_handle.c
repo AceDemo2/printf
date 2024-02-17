@@ -30,7 +30,7 @@ int handle_id(va_list i, int pl, int s, int lo, int hs, int w)
 	else if (j < 0)
 	{
 		m += write(1, "-", 1);
-		j = -j;
+		j = -1 * j;
 		w--;
 	}
 	if (j == 0)
