@@ -3,7 +3,6 @@ int handle(va_list i, int c, int a, int lo, int hs, int w)
 {
 
 	unsigned long l = 0, k, m = 0, n, b;
-	void *d;
 	char *j, *o = "0123456789ABCDEF", *p = "0123456789abcdef";
 	if (lo)
 		b = va_arg(i, unsigned long);
