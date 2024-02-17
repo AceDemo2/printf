@@ -15,7 +15,7 @@ int handle_id(va_list i, int pl, int s, int lo, int hs, int w)
         }
 	else
 	{
-		j = va_arg(i, long);
+		j = va_arg(i, int);
 	}
 	if (j >= 0 && pl)
 	{
