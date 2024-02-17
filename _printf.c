@@ -56,7 +56,7 @@ int _printf(const char *format, ...)
                         if (h)
                                 p = (*(format) == 'o') ? 3 : (*(format) == 'X') ? 4 : 2;
                         else
-                                p = (*(format) == 'o') ? 1 : 0;
+                                p = (*(format) == 'X') ? 0 : 1;
                         /*rd = pl + s + h + lo + hs + w1;*/
                         if (*format == '\0')
                         {
