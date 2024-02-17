@@ -16,8 +16,6 @@ int handle_p(va_list i, int w);
 int handle_r(char *r, int w);
 int handle_R(char *r, int w);
 int padding(int w, int l);
-int handle_p(va_list i, int w);
-
 int handle_flags(const char *f);
 
 #endif
