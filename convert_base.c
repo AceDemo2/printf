@@ -62,7 +62,7 @@ int handle(va_list i, int c, int a, int lo, int hs, int w)
 		{
 			l--;
 			n = (k % c);
-			j[l] = (a == 1 || a == 2) ? p[n] : (a == 4) ? o[n]: p[n];
+			j[l] = (a == 1 || a == 2) ? p[n] : (a == 4) ? o[n]: o[n];
 			k /= c;
 			m++;
 		}
