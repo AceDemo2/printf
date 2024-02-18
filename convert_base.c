@@ -1,5 +1,5 @@
 #include "main.h"
-int handle(va_list i, int b, char fo, int lo, int hs, int w)
+int handle(va_list i, int c, char fo, int lo, int hs, int w)
 {
 
         unsigned long l = 0, k, m = 0, n, b;
