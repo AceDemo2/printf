@@ -23,11 +23,11 @@ int handle(va_list i, int b, char fo, int lo, int hs, int w, int h)
     }*/
 
         if (lo)
-            q = va_arg(i, unsigned long);
+            q = va_arg(i, unsigned long int);
         else if (hs)
             q = (short)va_arg(i, int);
         else
-            q = va_arg(i, unsigned long);
+            q = va_arg(i, unsigned long int);
 
 
     k = q;
