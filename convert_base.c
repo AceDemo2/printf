@@ -1,8 +1,8 @@
 #include "main.h"
-int handle(va_list i, int c, char fo, int lo, int hs, int w)
+int handle(va_list i, int b, char fo, int lo, int hs, int w)
 {
 
-        unsigned long l = 0, k, m = 0, n, b;
+        unsigned long l = 0, k, m = 0, n, q;
         void *d;
         char *j, *o = "0123456789ABCDEF", *p = "0123456789abcdef", *f;
         f = fo;
@@ -18,28 +18,28 @@ int handle(va_list i, int c, char fo, int lo, int hs, int w)
                         return (m);
                 }
                 else
-                        b = (unsigned long)d;
+                        q = (unsigned long)d;
         }
         else
         {
                 if (lo)
-                        b = va_arg(i, unsigned long);
+                        q = va_arg(i, unsigned long);
                 else if (hs)
-                        b = (short)va_arg(i, int);
+                        q = (short)va_arg(i, int);
                 else
-                        b = va_arg(i, unsigned long);
+                        q = va_arg(i, unsigned long);
         }
-        k = b;
-        if (b == 0)
+        k = q;
+        if (q == 0)
         {
                 write(1, "0", 1);
                 m = 1;
         }
         else
         {
-                while (b != 0)
+                while (q != 0)
                 {
-                        b /= c;
+                        q /= b;
                         l++;
                 }
                 if (f == "p")
@@ -64,9 +64,9 @@ int handle(va_list i, int c, char fo, int lo, int hs, int w)
                 while(l > 0)
                 {
                         l--;
-                        n = (k % c);
+                        n = (k % b);
                         j[l] = (f == "X" || f == "X1") ? o[n]: p[n];
-                        k /= c;
+                        k /= b;
                         m++;
                 }
                 if (f == "p" || f == "x1")
