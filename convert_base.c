@@ -44,7 +44,7 @@ int handle(va_list i, int b, char fo, int lo, int hs, int w, int h)
             q /= b;
             l++;
         }
-        j = malloc(sizeof(unsigned long) * (l + 2));
+        j = malloc(sizeof(unsigned int) * (l + 2));
         if (j == NULL)
         {
             va_end(i);
