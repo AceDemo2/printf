@@ -7,7 +7,6 @@
 int _printf(const char *format, ...)
 {
         int m = 0, l, pl, s, h, lo, hs, w;
-        char* p;
         va_list i;
         char *k;
 
@@ -54,10 +53,6 @@ int _printf(const char *format, ...)
                                 else
                                         l++;
                         }
-                        if (h)
-                                p = (*(format) == 'o') ? "o1" : (*(format) == 'X') ? "X1" : "x1";
-                        else
-                                p = (*(format) == 'X') ? "X" : ;
                         /*rd = pl + s + h + lo + hs + w1;*/
                         if (*format == '\0')
                         {
@@ -77,19 +72,19 @@ int _printf(const char *format, ...)
                                 m += handle_id(i, pl, s, lo, hs, w);
                         }
                         else if (*(format) == 'b')
-                                m += handle(i, 2, format, lo, hs, w);
+                                m += handle(i, 2, *format, lo, hs, w);
                         else if (*(format) == 'u')
-                                m += handle(i, 10, format, lo, hs, w);
+                                m += handle(i, 10, *format, lo, hs, w);
                         else if (*(format) == 'o')
-                                m += handle(i, 8, format, lo, hs, w);
+                                m += handle(i, 8, *format, lo, hs, w);
                         else if (*(format) == 'X')
-                                m += handle(i, 16, format, lo, hs, w);
+                                m += handle(i, 16, *format, lo, hs, w);
                         else if (*(format) == 'x')
-                                m += handle(i, 16, format, lo, hs, w);
+                                m += handle(i, 16, *format, lo, hs, w);
                         else if (*(format) == 'S')
                                 m += custom_specifier(va_arg(i, char *), w);
                         else if (*(format) == 'p')
-                                m += handle(i, format, 2, 0, 0, w);
+                                m += handle(i, 16, *format, 0, 0, w);
                         else if (*(format) == 'r')
                                 m += handle_r(va_arg(i, char *), w);
                         else if (*(format) == 'R')
