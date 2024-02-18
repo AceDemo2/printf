@@ -5,10 +5,10 @@ int handle(va_list i, int b, char fo, int lo, int hs, int w, int h)
         unsigned long l = 0, k, m = 0, n, q;
         void *d;
         char *j, *o = "0123456789ABCDEF", *p = "0123456789abcdef", *f;
-        f = (char *)fo;
+        *f = fo;
         if (h)
-                f = (fo == 'o') ? "o1" : (fo == 'X') ? "X1" : (fo == 'X') ? "x1" : f;
-        if (f == "p")
+                *f = (fo == 'o') ? "o1" : (fo == 'X') ? "X1" : (fo == 'X') ? "x1" : *f;
+        if (*f == "p")
         {
                 d = va_arg(i, void *);
                 if (d == NULL)
@@ -42,7 +42,7 @@ int handle(va_list i, int b, char fo, int lo, int hs, int w, int h)
                         q /= b;
                         l++;
                 }
-                if (f == "p")
+                if (*f == "p")
                 {
                         j = malloc(sizeof(unsigned long) * l + 2);
                         if (j == NULL)
@@ -65,23 +65,23 @@ int handle(va_list i, int b, char fo, int lo, int hs, int w, int h)
                 {
                         l--;
                         n = (k % b);
-                        j[l] = (f == "X" || f == "X1") ? o[n]: p[n];
+                        j[l] = (*f == "X" || *f == "X1") ? o[n]: p[n];
                         k /= b;
                         m++;
                 }
-                if (f == "p" || f == "x1")
+                if (*f == "p" || *f == "x1")
                 {
                         if (w)
                                 m += padding(w, 2 + strlen(j));
                         m += write(1, "0x", 2);
                 }
-                if (f == "o1")
+                if (*f == "o1")
                 {
                         if (w)
                                 m += padding(w, 1 + strlen(j));
                         m += write(1, "0", 1);
                 }
-                if (f == "X1")
+                if (*f == "X1")
                 {
                         if (w)
                                 m += padding(w, 2 + strlen(j));
