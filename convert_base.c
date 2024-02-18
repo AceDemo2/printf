@@ -9,7 +9,7 @@ int handle(va_list i, int b, char fo, int lo, int hs, int w, int h)
     if (h)
         strcpy(f, (fo == 'o') ? "o1" : (fo == 'X') ? "X1" : (fo == 'x') ? "x1" : f);
 
-    if (f[0] == 'p')
+    /*if (f[0] == 'p')
     {
         d = va_arg(i, void *);
         if (d == NULL)
@@ -20,16 +20,15 @@ int handle(va_list i, int b, char fo, int lo, int hs, int w, int h)
         }
         else
             q = (unsigned long)d;
-    }
-    else
-    {
+    }*/
+
         if (lo)
             q = va_arg(i, unsigned long);
         else if (hs)
             q = (short)va_arg(i, int);
         else
             q = va_arg(i, unsigned long);
-    }
+
 
     k = q;
 
