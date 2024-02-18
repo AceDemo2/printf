@@ -45,26 +45,12 @@ int handle(va_list i, int b, char fo, int lo, int hs, int w, int h)
             q /= b;
             l++;
         }
-
-        if (f[0] == 'p')
+        j = malloc(sizeof(char) * (l + 2));
+        if (j == NULL)
         {
-            j = malloc(sizeof(unsigned long) * (l + 2));
-            if (j == NULL)
-            {
-                va_end(i);
-                return (-1);
-            }
+            va_end(i);
+            return (-1);
         }
-        else
-        {
-            j = malloc(sizeof(unsigned long) * (l + 2));
-            if (j == NULL)
-            {
-                va_end(i);
-                return (-1);
-            }
-        }
-
         j[l] = '\0';
 
         while (l > 0)
