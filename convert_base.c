@@ -5,7 +5,6 @@ int handle(va_list i, int b, char fo, int lo, int hs, int w, int h)
     unsigned long l = 0, k, m = 0, n, q;
     void *d;
     char *j, *o = "0123456789ABCDEF", *p = "0123456789abcdef", f[3];
-    strcpy(f, (fo == 'o') ? "o1" : (fo == 'X') ? "X1" : (fo == 'x') ? "x1" : f);
 
     if (h)
         strcpy(f, (fo == 'o') ? "o1" : (fo == 'X') ? "X1" : (fo == 'x') ? "x1" : f);
