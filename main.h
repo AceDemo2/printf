@@ -10,7 +10,7 @@ int handle_id(va_list i, int pl, int s, int lo, int hs, int w);
 int handle_c(int c, int w);
 int handle_s(char *j, int w);
 int custom_specifier(char *c, int w);
-int handle(va_list i, int b, char fo, int lo, int hs, int w);
+int handle(va_list i, int b, char fo, int lo, int hs, int w, int j);
 void dbuff(int a, char *b);
 int handle_p(va_list i, int w);
 int handle_r(char *r, int w);
